@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery — HopeWave Nonprofit Charity Template</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    .gallery-grid { columns: 3; column-gap: 16px; }
+    .gallery-grid .gallery-item { break-inside: avoid; margin-bottom: 16px; }
+    .gallery-grid .gallery-item img { width:100%; height:auto; border-radius:var(--radius); display:block; }
+    @media(max-width:767px){ .gallery-grid { columns: 2; } }
+    @media(max-width:480px){ .gallery-grid { columns: 1; } }
+    /* Lightbox */
+    .lightbox { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.92); z-index:9999; align-items:center; justify-content:center; }
+    .lightbox.active { display:flex; }
+    .lightbox img { max-width:90vw; max-height:85vh; border-radius:var(--radius); box-shadow:0 20px 60px rgba(0,0,0,0.5); }
+    .lightbox-close { position:absolute; top:20px; right:28px; color:#fff; font-size:2rem; cursor:pointer; line-height:1; }
+  </style>
+</head>
+<body>
+<div class="preloader"><div class="preloader-logo">Hope<span>Wave</span></div><div class="preloader-bar"><div class="preloader-fill"></div></div></div>
+
+<nav class="navbar navbar-expand-lg navbar-hopewave fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="../index.html"><div class="brand-icon"><i class="bi bi-heart-fill text-white" style="font-size:16px;"></i></div>Hope<span>Wave</span></a>
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMain"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="navMain">
+      <ul class="navbar-nav mx-auto gap-1">
+        <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="causes.html">Causes</a></li>
+        <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
+        <li class="nav-item"><a class="nav-link" href="volunteer.html">Volunteer</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle active" href="#" data-bs-toggle="dropdown">Pages</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="team.html">Our Team</a></li>
+            <li><a class="dropdown-item active" href="gallery.html">Gallery</a></li>
+            <li><a class="dropdown-item" href="blog.html">Blog</a></li>
+            <li><a class="dropdown-item" href="faq.html">FAQ</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+      <a href="donate.html" class="nav-link navbar-donate-btn"><i class="bi bi-heart-fill me-1"></i> Donate Now</a>
+    </div>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="container position-relative" style="z-index:2;"><div class="text-center">
+    <h1 class="page-hero-title">Our Gallery</h1>
+    <nav aria-label="breadcrumb"><ol class="breadcrumb justify-content-center">
+      <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+      <li class="breadcrumb-item active">Gallery</li>
+    </ol></nav>
+  </div></div>
+</div>
+
+<section class="section-pad">
+  <div class="container">
+    <!-- Filter -->
+    <div class="d-flex flex-wrap gap-2 justify-content-center mb-5 fade-up">
+      <button class="amount-btn active" style="background:var(--primary);border-color:var(--primary);color:#fff;">All</button>
+      <button class="amount-btn" style="background:#fff;color:var(--secondary);border-color:var(--border-color);">Field Work</button>
+      <button class="amount-btn" style="background:#fff;color:var(--secondary);border-color:var(--border-color);">Events</button>
+      <button class="amount-btn" style="background:#fff;color:var(--secondary);border-color:var(--border-color);">Communities</button>
+      <button class="amount-btn" style="background:#fff;color:var(--secondary);border-color:var(--border-color);">Volunteers</button>
+    </div>
+
+    <!-- Masonry Grid -->
+    <div class="gallery-grid fade-up">
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <div style="position:relative;overflow:hidden;border-radius:var(--radius);">
+          <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=600&q=80" alt="Gallery" />
+          <div class="gallery-overlay"><span><i class="bi bi-zoom-in"></i></span></div>
+        </div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <div style="position:relative;overflow:hidden;border-radius:var(--radius);">
+          <img src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?w=600&q=80" alt="Gallery" />
+          <div class="gallery-overlay"><span><i class="bi bi-zoom-in"></i></span></div>
+        </div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <div style="position:relative;overflow:hidden;border-radius:var(--radius);">
+          <img src="https://images.unsplash.com/photo-1593113598332-cd288d649433?w=600&q=80" alt="Gallery" />
+          <div class="gallery-overlay"><span><i class="bi bi-zoom-in"></i></span></div>
+        </div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <div style="position:relative;overflow:hidden;border-radius:var(--radius);">
+          <img src="https://images.unsplash.com/photo-1527613426441-4da17471b66d?w=600&q=80" alt="Gallery" />
+          <div class="gallery-overlay"><span><i class="bi bi-zoom-in"></i></span></div>
+        </div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <div style="position:relative;overflow:hidden;border-radius:var(--radius);">
+          <img src="https://images.unsplash.com/photo-1497375638960-ca368c7231b4?w=600&q=80" alt="Gallery" />
+          <div class="gallery-overlay"><span><i class="bi bi-zoom-in"></i></span></div>
+        </div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <div style="position:relative;overflow:hidden;border-radius:var(--radius);">
+          <img src="https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?w=600&q=80" alt="Gallery" />
+          <div class="gallery-overlay"><span><i class="bi bi-zoom-in"></i></span></div>
+        </div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <div style="position:relative;overflow:hidden;border-radius:var(--radius);">
+          <img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=600&q=80" alt="Gallery" />
+          <div class="gallery-overlay"><span><i class="bi bi-zoom-in"></i></span></div>
+        </div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <div style="position:relative;overflow:hidden;border-radius:var(--radius);">
+          <img src="https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?w=600&q=80" alt="Gallery" />
+          <div class="gallery-overlay"><span><i class="bi bi-zoom-in"></i></span></div>
+        </div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <div style="position:relative;overflow:hidden;border-radius:var(--radius);">
+          <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&q=80" alt="Gallery" />
+          <div class="gallery-overlay"><span><i class="bi bi-zoom-in"></i></span></div>
+        </div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <div style="position:relative;overflow:hidden;border-radius:var(--radius);">
+          <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&q=80" alt="Gallery" />
+          <div class="gallery-overlay"><span><i class="bi bi-zoom-in"></i></span></div>
+        </div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <div style="position:relative;overflow:hidden;border-radius:var(--radius);">
+          <img src="https://images.unsplash.com/photo-1593113630400-ea4288922559?w=600&q=80" alt="Gallery" />
+          <div class="gallery-overlay"><span><i class="bi bi-zoom-in"></i></span></div>
+        </div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <div style="position:relative;overflow:hidden;border-radius:var(--radius);">
+          <img src="https://images.unsplash.com/photo-1530549387789-4c1017266635?w=600&q=80" alt="Gallery" />
+          <div class="gallery-overlay"><span><i class="bi bi-zoom-in"></i></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <span class="lightbox-close" onclick="closeLightbox()">×</span>
+  <img id="lightboxImg" src="" alt="Gallery" onclick="event.stopPropagation()" />
+</div>
+
+<footer class="footer-main">
+  <div class="container">
+    <div class="row gy-4">
+      <div class="col-lg-5"><div class="footer-brand-name mb-2">Hope<span style="color:var(--primary);">Wave</span></div><p class="footer-desc">Empowering communities through compassionate action.</p><div class="footer-social"><a href="#"><i class="bi bi-facebook"></i></a><a href="#"><i class="bi bi-twitter-x"></i></a><a href="#"><i class="bi bi-instagram"></i></a><a href="#"><i class="bi bi-linkedin"></i></a></div></div>
+      <div class="col-lg-3"><div class="footer-heading">Quick Links</div><ul class="footer-links"><li><a href="../index.html"><i class="bi bi-chevron-right"></i>Home</a></li><li><a href="causes.html"><i class="bi bi-chevron-right"></i>Causes</a></li><li><a href="donate.html"><i class="bi bi-chevron-right"></i>Donate</a></li><li><a href="contact.html"><i class="bi bi-chevron-right"></i>Contact</a></li></ul></div>
+      <div class="col-lg-4"><div class="footer-heading">Contact</div><div class="footer-contact-item"><i class="bi bi-geo-alt-fill footer-contact-icon"></i><div>142 Hope Avenue, NY 10001</div></div><div class="footer-contact-item"><i class="bi bi-telephone-fill footer-contact-icon"></i><div>+1 (800) 467-3968</div></div><div class="footer-contact-item"><i class="bi bi-envelope-fill footer-contact-icon"></i><div>hello@hopewave.org</div></div></div>
+    </div>
+    <hr class="footer-divider" />
+  </div>
+  <div class="footer-bottom"><div class="container">© 2026 HopeWave. All rights reserved.</div></div>
+</footer>
+
+<div class="scroll-top"><i class="bi bi-arrow-up"></i></div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../js/main.js"></script>
+<script>
+function openLightbox(el) {
+  const img = el.querySelector('img');
+  document.getElementById('lightboxImg').src = img.src;
+  document.getElementById('lightbox').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('active');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', e => { if(e.key === 'Escape') closeLightbox(); });
+</script>
+</body>
+</html>

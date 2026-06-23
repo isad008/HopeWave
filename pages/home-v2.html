@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="HopeWave — Home Bold Dark Style" />
+  <title>HopeWave — Home Bold Dark</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    /* ---- V2 Override Variables ---- */
+    :root {
+      --v2-dark: #0D0D0D;
+      --v2-dark2: #171717;
+      --v2-card: #1E1E1E;
+      --v2-border: rgba(255,255,255,0.08);
+    }
+
+    /* ---- V2 Navbar ---- */
+    .navbar-v2 {
+      background: rgba(13,13,13,0.96);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--v2-border);
+      padding: 0;
+    }
+    .navbar-v2 .navbar-brand {
+      font-family: 'Inter', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: #fff !important;
+      letter-spacing: -0.5px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 18px 0;
+    }
+    .navbar-v2 .navbar-brand span { color: var(--primary); }
+    .navbar-v2 .brand-icon { background: var(--primary); }
+    .navbar-v2 .nav-link {
+      color: rgba(255,255,255,0.75) !important;
+      font-weight: 600;
+      font-size: 14px;
+      padding: 8px 14px !important;
+      border-radius: 8px;
+      transition: var(--transition);
+    }
+    .navbar-v2 .nav-link:hover,
+    .navbar-v2 .nav-link.active { color: #fff !important; background: rgba(255,255,255,0.06); }
+    .navbar-v2 .dropdown-menu { background: #1E1E1E; border: 1px solid var(--v2-border); }
+    .navbar-v2 .dropdown-item { color: rgba(255,255,255,0.75); }
+    .navbar-v2 .dropdown-item:hover { background: rgba(255,255,255,0.06); color: #fff; }
+    .navbar-v2 .navbar-donate-btn { background: var(--primary) !important; color: #fff !important; }
+
+    /* ---- V2 Hero ---- */
+    .hero-v2 {
+      background: var(--v2-dark);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      padding-top: 90px;
+    }
+    .hero-v2-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(200,75,26,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(200,75,26,0.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+    .hero-v2-glow {
+      position: absolute;
+      width: 700px; height: 700px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(200,75,26,0.12) 0%, transparent 70%);
+      top: -100px; left: -100px;
+      pointer-events: none;
+    }
+    .hero-v2-glow-2 {
+      position: absolute;
+      width: 500px; height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(26,60,94,0.2) 0%, transparent 70%);
+      bottom: -100px; right: 0;
+      pointer-events: none;
+    }
+    .hero-v2-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid rgba(200,75,26,0.4);
+      background: rgba(200,75,26,0.1);
+      color: var(--primary-light);
+      padding: 6px 16px;
+      border-radius: 50px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+    .hero-v2-tag span { width: 6px; height: 6px; background: var(--primary); border-radius: 50%; display: inline-block; }
+    .hero-v2-title {
+      font-family: 'Inter', sans-serif;
+      font-size: clamp(2.8rem, 6vw, 5.5rem);
+      font-weight: 800;
+      line-height: 1.05;
+      letter-spacing: -2px;
+      color: #fff;
+      margin-bottom: 24px;
+    }
+    .hero-v2-title .highlight {
+      background: linear-gradient(135deg, var(--primary-light), var(--accent-light));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero-v2-desc { color: rgba(255,255,255,0.6); font-size: 1.05rem; max-width: 520px; margin-bottom: 40px; line-height: 1.8; }
+    .hero-v2-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+    .btn-v2-primary {
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      padding: 16px 36px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 15px;
+      cursor: pointer;
+      transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+    }
+    .btn-v2-primary:hover { background: var(--primary-dark); color: #fff; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(200,75,26,0.4); }
+    .btn-v2-ghost {
+      background: transparent;
+      color: rgba(255,255,255,0.8);
+      border: 1px solid rgba(255,255,255,0.2);
+      padding: 15px 36px;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 15px;
+      cursor: pointer;
+      transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+    }
+    .btn-v2-ghost:hover { background: rgba(255,255,255,0.08); color: #fff; border-color: rgba(255,255,255,0.4); }
+
+    /* Cause Cards V2 */
+    .cause-v2 {
+      background: var(--v2-card);
+      border: 1px solid var(--v2-border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      transition: var(--transition);
+    }
+    .cause-v2:hover { border-color: rgba(200,75,26,0.4); transform: translateY(-6px); box-shadow: 0 20px 60px rgba(0,0,0,0.4); }
+    .cause-v2 img { width: 100%; height: 200px; object-fit: cover; }
+    .cause-v2-body { padding: 22px; }
+    .cause-v2-badge { display: inline-block; background: rgba(200,75,26,0.15); color: var(--primary-light); font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 4px 12px; border-radius: 50px; margin-bottom: 10px; }
+    .cause-v2-title { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 8px; }
+    .cause-v2-progress { height: 4px; background: rgba(255,255,255,0.08); border-radius: 50px; margin: 12px 0 8px; overflow: hidden; }
+    .cause-v2-fill { height: 100%; background: linear-gradient(90deg, var(--primary), var(--accent-light)); border-radius: 50px; }
+    .cause-v2-meta { display: flex; justify-content: space-between; font-size: 13px; color: rgba(255,255,255,0.5); }
+
+    /* Stats V2 */
+    .stats-v2 { background: var(--v2-dark2); border-top: 1px solid var(--v2-border); border-bottom: 1px solid var(--v2-border); padding: 60px 0; }
+    .stat-v2 { text-align: center; }
+    .stat-v2-num { font-family: 'Inter', sans-serif; font-size: 3rem; font-weight: 800; color: #fff; line-height: 1; display: block; letter-spacing: -1px; }
+    .stat-v2-num span { color: var(--primary-light); }
+    .stat-v2-label { font-size: 13px; color: rgba(255,255,255,0.5); margin-top: 6px; display: block; letter-spacing: 1px; text-transform: uppercase; }
+
+    /* Mission V2 */
+    .mission-v2 { background: var(--v2-dark); }
+    .mission-v2 h2 { color: #fff; }
+    .feature-v2 {
+      display: flex;
+      gap: 16px;
+      padding: 20px;
+      background: var(--v2-card);
+      border: 1px solid var(--v2-border);
+      border-radius: var(--radius);
+      transition: var(--transition);
+    }
+    .feature-v2:hover { border-color: rgba(200,75,26,0.4); }
+    .fv2-icon { width: 48px; height: 48px; min-width: 48px; background: rgba(200,75,26,0.15); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--primary-light); font-size: 20px; }
+    .feature-v2 h6 { color: #fff; font-family: 'Inter', sans-serif; font-weight: 700; margin-bottom: 4px; }
+    .feature-v2 p { color: rgba(255,255,255,0.55); font-size: 13px; margin: 0; }
+
+    /* CTA V2 */
+    .cta-v2 {
+      background: var(--v2-dark2);
+      border-top: 1px solid var(--v2-border);
+      padding: 100px 0;
+    }
+    .cta-v2-inner {
+      background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+      border-radius: 24px;
+      padding: 60px;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-v2-inner::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 300px; height: 300px;
+      background: rgba(255,255,255,0.05);
+      border-radius: 50%;
+    }
+
+    /* Footer V2 */
+    .footer-v2 { background: #080808; border-top: 1px solid var(--v2-border); }
+    .footer-v2 .footer-brand-name { color: #fff; }
+    .footer-v2 .footer-desc { color: rgba(255,255,255,0.5); }
+    .footer-v2 .footer-heading { color: rgba(255,255,255,0.9); }
+    .footer-v2 .footer-links a { color: rgba(255,255,255,0.5); }
+    .footer-v2 .footer-links a:hover { color: var(--primary-light); }
+    .footer-v2 .footer-contact-item { color: rgba(255,255,255,0.5); }
+    .footer-v2 .footer-divider { border-color: rgba(255,255,255,0.06); }
+    .footer-v2 .footer-bottom { background: rgba(0,0,0,0.4); color: rgba(255,255,255,0.35); }
+    .footer-v2 .footer-bottom a { color: rgba(255,255,255,0.4); }
+  </style>
+</head>
+<body style="background:#0D0D0D;">
+<div class="preloader" style="background:#0D0D0D;"><div class="preloader-logo">Hope<span>Wave</span></div><div class="preloader-bar"><div class="preloader-fill"></div></div></div>
+
+<!-- NAVBAR V2 -->
+<nav class="navbar navbar-expand-lg navbar-v2 fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="../index.html">
+      <div class="brand-icon"><i class="bi bi-heart-fill text-white" style="font-size:16px;"></i></div>
+      Hope<span>Wave</span>
+    </a>
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navV2" style="filter:invert(1);">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navV2">
+      <ul class="navbar-nav mx-auto gap-1">
+        <li class="nav-item dropdown">
+          <a class="nav-link active dropdown-toggle" href="../index.html" data-bs-toggle="dropdown">Home</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="../index.html">Home — Classic</a></li>
+            <li><a class="dropdown-item active" href="home-v2.html">Home — Bold Dark</a></li>
+            <li><a class="dropdown-item" href="home-v3.html">Home — Nature Green</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Causes</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="causes.html">All Causes</a></li>
+            <li><a class="dropdown-item" href="cause-detail.html">Cause Detail</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
+        <li class="nav-item"><a class="nav-link" href="volunteer.html">Volunteer</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Pages</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="team.html">Our Team</a></li>
+            <li><a class="dropdown-item" href="gallery.html">Gallery</a></li>
+            <li><a class="dropdown-item" href="blog.html">Blog</a></li>
+            <li><a class="dropdown-item" href="faq.html">FAQ</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+      <div class="d-flex align-items-center gap-2">
+        <a href="login.html" class="nav-link" style="color:rgba(255,255,255,0.75)!important;font-weight:600;font-size:14px;">Sign In</a>
+        <a href="donate.html" class="nav-link navbar-donate-btn"><i class="bi bi-heart-fill me-1"></i> Donate Now</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO V2 -->
+<section class="hero-v2">
+  <div class="hero-v2-grid"></div>
+  <div class="hero-v2-glow"></div>
+  <div class="hero-v2-glow-2"></div>
+  <div class="container position-relative" style="z-index:2;">
+    <div class="row align-items-center gy-5">
+      <div class="col-lg-6">
+        <div class="hero-v2-tag"><span></span>14 Years of Global Impact</div>
+        <h1 class="hero-v2-title">
+          Turning<br/>
+          <span class="highlight">Compassion</span><br/>
+          Into Change
+        </h1>
+        <p class="hero-v2-desc">Join 40,000+ donors funding life-changing programs in water, education, and healthcare across 48 countries.</p>
+        <div class="hero-v2-actions">
+          <a href="donate.html" class="btn-v2-primary"><i class="bi bi-heart-fill"></i> Donate Now</a>
+          <a href="causes.html" class="btn-v2-ghost">Explore Causes <i class="bi bi-arrow-right"></i></a>
+        </div>
+
+        <!-- Ticker -->
+        <div style="margin-top:48px;padding-top:40px;border-top:1px solid rgba(255,255,255,0.08);display:flex;gap:40px;flex-wrap:wrap;">
+          <div>
+            <div style="font-family:'Inter',sans-serif;font-size:2rem;font-weight:800;color:#fff;line-height:1;" data-counter data-target="12400" data-suffix="+">12400+</div>
+            <div style="font-size:12px;color:rgba(255,255,255,0.45);margin-top:4px;letter-spacing:1px;text-transform:uppercase;">Lives Impacted</div>
+          </div>
+          <div>
+            <div style="font-family:'Inter',sans-serif;font-size:2rem;font-weight:800;color:#fff;line-height:1;" data-counter data-target="15" data-suffix="M+">15M+</div>
+            <div style="font-size:12px;color:rgba(255,255,255,0.45);margin-top:4px;letter-spacing:1px;text-transform:uppercase;">Total Raised</div>
+          </div>
+          <div>
+            <div style="font-family:'Inter',sans-serif;font-size:2rem;font-weight:800;color:#fff;line-height:1;" data-counter data-target="98" data-suffix="%">98%</div>
+            <div style="font-size:12px;color:rgba(255,255,255,0.45);margin-top:4px;letter-spacing:1px;text-transform:uppercase;">To Programs</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <!-- Stacked Cards Layout -->
+        <div style="position:relative;padding:20px 0 40px 20px;">
+          <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=600&q=80" alt="Impact" style="width:80%;border-radius:16px;box-shadow:0 20px 60px rgba(0,0,0,0.5);position:relative;z-index:2;" />
+          <img src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?w=400&q=80" alt="Community" style="width:55%;border-radius:12px;position:absolute;bottom:-10px;right:0;z-index:3;border:3px solid #0D0D0D;box-shadow:0 12px 40px rgba(0,0,0,0.6);" />
+          <!-- Floating stat card -->
+          <div style="position:absolute;top:10px;right:10px;z-index:4;background:var(--primary);color:#fff;padding:16px 20px;border-radius:14px;text-align:center;box-shadow:0 8px 24px rgba(200,75,26,0.4);">
+            <div style="font-family:'Inter',sans-serif;font-size:1.8rem;font-weight:800;line-height:1;">48</div>
+            <div style="font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;opacity:0.85;">Countries</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS V2 -->
+<div class="stats-v2">
+  <div class="container">
+    <div class="row gy-4">
+      <div class="col-6 col-md-3"><div class="stat-v2"><span class="stat-v2-num" data-counter data-target="40" data-suffix="K+">40K+</span><span class="stat-v2-label">Active Donors</span></div></div>
+      <div class="col-6 col-md-3"><div class="stat-v2"><span class="stat-v2-num" data-counter data-target="1200" data-suffix="+">1200+</span><span class="stat-v2-label">Volunteers</span></div></div>
+      <div class="col-6 col-md-3"><div class="stat-v2"><span class="stat-v2-num" data-counter data-target="320" data-suffix="+">320+</span><span class="stat-v2-label">Active Projects</span></div></div>
+      <div class="col-6 col-md-3"><div class="stat-v2"><span class="stat-v2-num" data-counter data-target="850" data-suffix="+">850+</span><span class="stat-v2-label">Projects Completed</span></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- CAUSES V2 -->
+<section class="section-pad mission-v2">
+  <div class="container">
+    <div class="row justify-content-between align-items-end mb-5">
+      <div class="col-lg-6 fade-up">
+        <div style="font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--primary-light);margin-bottom:12px;display:flex;align-items:center;gap:8px;"><span style="width:28px;height:2px;background:var(--primary);display:block;"></span>Active Causes</div>
+        <h2 style="color:#fff;font-size:clamp(1.8rem,3.5vw,2.8rem);">Causes Needing<br/>Your Support</h2>
+      </div>
+      <div class="col-lg-4 text-lg-end fade-up">
+        <a href="causes.html" class="btn-v2-ghost" style="font-size:14px;padding:12px 28px;">View All <i class="bi bi-arrow-right"></i></a>
+      </div>
+    </div>
+    <div class="row gy-4">
+      <div class="col-lg-4 col-md-6 fade-up">
+        <div class="cause-v2">
+          <img src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?w=500&q=80" alt="Water" />
+          <div class="cause-v2-body">
+            <span class="cause-v2-badge">Water</span>
+            <div class="cause-v2-title">Clean Water for Rural Kenya</div>
+            <div class="cause-v2-progress"><div class="cause-v2-fill" style="width:80%;"></div></div>
+            <div class="cause-v2-meta"><span>$48,200 raised</span><span>80% of $60K</span></div>
+            <a href="donate.html" class="btn-v2-primary mt-3" style="font-size:13px;padding:10px 22px;">Donate <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 fade-up">
+        <div class="cause-v2">
+          <img src="https://images.unsplash.com/photo-1497375638960-ca368c7231b4?w=500&q=80" alt="Education" />
+          <div class="cause-v2-body">
+            <span class="cause-v2-badge">Education</span>
+            <div class="cause-v2-title">School Rebuilding in Nepal</div>
+            <div class="cause-v2-progress"><div class="cause-v2-fill" style="width:43%;"></div></div>
+            <div class="cause-v2-meta"><span>$32,500 raised</span><span>43% of $75K</span></div>
+            <a href="donate.html" class="btn-v2-primary mt-3" style="font-size:13px;padding:10px 22px;">Donate <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 fade-up">
+        <div class="cause-v2">
+          <img src="https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?w=500&q=80" alt="Health" />
+          <div class="cause-v2-body">
+            <span class="cause-v2-badge">Healthcare</span>
+            <div class="cause-v2-title">Mobile Clinic Bangladesh</div>
+            <div class="cause-v2-progress"><div class="cause-v2-fill" style="width:91%;"></div></div>
+            <div class="cause-v2-meta"><span>$91,000 raised</span><span>91% of $100K</span></div>
+            <a href="donate.html" class="btn-v2-primary mt-3" style="font-size:13px;padding:10px 22px;">Donate <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MISSION V2 -->
+<section class="section-pad" style="background:var(--v2-dark2);border-top:1px solid var(--v2-border);">
+  <div class="container">
+    <div class="row align-items-center gy-5">
+      <div class="col-lg-6 fade-up">
+        <div style="font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--primary-light);margin-bottom:12px;display:flex;align-items:center;gap:8px;"><span style="width:28px;height:2px;background:var(--primary);display:block;"></span>Our Mission</div>
+        <h2 style="color:#fff;font-size:clamp(1.8rem,3.5vw,2.8rem);margin-bottom:20px;">Every Dollar<br/>Accountable</h2>
+        <p style="color:rgba(255,255,255,0.6);font-size:1rem;line-height:1.9;margin-bottom:32px;">We believe generosity deserves trust. That's why 98% of every donation reaches our programs directly — no hidden fees, no corporate overhead bloat.</p>
+        <div style="display:flex;flex-direction:column;gap:12px;">
+          <div class="feature-v2">
+            <div class="fv2-icon"><i class="bi bi-shield-check-fill"></i></div>
+            <div><h6>Radical Transparency</h6><p>Real-time dashboards show every dollar's journey from donation to impact.</p></div>
+          </div>
+          <div class="feature-v2">
+            <div class="fv2-icon"><i class="bi bi-graph-up-arrow"></i></div>
+            <div><h6>Measurable Outcomes</h6><p>Every project has clear KPIs, milestone reports, and independent audits.</p></div>
+          </div>
+          <div class="feature-v2">
+            <div class="fv2-icon"><i class="bi bi-people-fill"></i></div>
+            <div><h6>Community-Led</h6><p>Programs are designed with — not imposed on — the communities we serve.</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-5 offset-lg-1 fade-up">
+        <img src="https://images.unsplash.com/photo-1593113598332-cd288d649433?w=600&q=80" alt="Mission" style="width:100%;border-radius:20px;box-shadow:0 20px 60px rgba(0,0,0,0.5);" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA V2 -->
+<div class="cta-v2">
+  <div class="container">
+    <div class="cta-v2-inner position-relative" style="z-index:1;">
+      <div class="row align-items-center gy-4">
+        <div class="col-lg-7">
+          <h2 style="color:#fff;font-size:clamp(1.8rem,3vw,2.6rem);margin-bottom:12px;">Ready to Change a Life Today?</h2>
+          <p style="color:rgba(255,255,255,0.85);font-size:1.05rem;margin:0;">Your donation — however small — creates a ripple of hope that lasts generations.</p>
+        </div>
+        <div class="col-lg-5 text-lg-end">
+          <div class="d-flex gap-3 flex-wrap justify-content-lg-end">
+            <a href="donate.html" class="btn-v2-primary" style="background:#fff;color:var(--primary);font-size:16px;padding:16px 36px;"><i class="bi bi-heart-fill"></i> Donate Now</a>
+            <a href="volunteer.html" class="btn-v2-ghost">Volunteer</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER V2 -->
+<footer class="footer-v2 footer-main">
+  <div class="container">
+    <div class="row gy-4">
+      <div class="col-lg-4"><div class="footer-brand-name mb-2">Hope<span style="color:var(--primary);">Wave</span></div><p class="footer-desc">Empowering communities through compassionate action. Every donation creates ripples of hope.</p><div class="footer-social"><a href="#"><i class="bi bi-facebook"></i></a><a href="#"><i class="bi bi-twitter-x"></i></a><a href="#"><i class="bi bi-instagram"></i></a><a href="#"><i class="bi bi-linkedin"></i></a></div></div>
+      <div class="col-lg-2 col-sm-4"><div class="footer-heading">Navigate</div><ul class="footer-links"><li><a href="../index.html"><i class="bi bi-chevron-right"></i>Home</a></li><li><a href="about.html"><i class="bi bi-chevron-right"></i>About</a></li><li><a href="causes.html"><i class="bi bi-chevron-right"></i>Causes</a></li><li><a href="events.html"><i class="bi bi-chevron-right"></i>Events</a></li><li><a href="volunteer.html"><i class="bi bi-chevron-right"></i>Volunteer</a></li></ul></div>
+      <div class="col-lg-2 col-sm-4"><div class="footer-heading">Support</div><ul class="footer-links"><li><a href="donate.html"><i class="bi bi-chevron-right"></i>Donate</a></li><li><a href="faq.html"><i class="bi bi-chevron-right"></i>FAQ</a></li><li><a href="blog.html"><i class="bi bi-chevron-right"></i>Blog</a></li><li><a href="contact.html"><i class="bi bi-chevron-right"></i>Contact</a></li><li><a href="login.html"><i class="bi bi-chevron-right"></i>Sign In</a></li></ul></div>
+      <div class="col-lg-4 col-sm-4"><div class="footer-heading">Contact</div><div class="footer-contact-item"><i class="bi bi-geo-alt-fill footer-contact-icon"></i><div>142 Hope Avenue, NY 10001</div></div><div class="footer-contact-item"><i class="bi bi-telephone-fill footer-contact-icon"></i><div>+1 (800) 467-3968</div></div><div class="footer-contact-item"><i class="bi bi-envelope-fill footer-contact-icon"></i><div>hello@hopewave.org</div></div></div>
+    </div>
+    <hr class="footer-divider" />
+  </div>
+  <div class="footer-bottom"><div class="container"><div class="row align-items-center"><div class="col-md-6 text-center text-md-start">© 2026 HopeWave. All rights reserved.</div><div class="col-md-6 text-center text-md-end mt-2 mt-md-0"><a href="#">Privacy</a> · <a href="#">Terms</a> · <a href="#">Cookies</a></div></div></div></div>
+</footer>
+
+<div class="scroll-top"><i class="bi bi-arrow-up"></i></div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../js/main.js"></script>
+</body>
+</html>

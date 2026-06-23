@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Create Account — HopeWave</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    .auth-wrap { min-height: 100vh; display: flex; align-items: stretch; }
+    .auth-left {
+      flex: 1; background: var(--primary);
+      display: flex; flex-direction: column; justify-content: center; align-items: flex-start;
+      padding: 60px; position: relative; overflow: hidden;
+    }
+    .auth-left::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(circle at 80% 20%, rgba(255,255,255,0.08) 0%, transparent 50%),
+                  radial-gradient(circle at 10% 80%, rgba(0,0,0,0.1) 0%, transparent 40%);
+    }
+    .auth-left-content { position: relative; z-index: 2; max-width: 440px; }
+    .auth-brand { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 800; color: #fff; margin-bottom: 36px; display: flex; align-items: center; gap: 10px; }
+    .auth-brand-icon { width: 40px; height: 40px; background: rgba(255,255,255,0.2); border-radius: 10px; display: flex; align-items: center; justify-content: center; }
+    .auth-right { width: 560px; background: var(--warm-white); display: flex; flex-direction: column; justify-content: center; padding: 50px; overflow-y: auto; }
+    .auth-form-title { font-size: 1.8rem; color: var(--secondary); margin-bottom: 6px; }
+    .auth-form-sub { color: var(--text-muted); font-size: 15px; margin-bottom: 28px; }
+    .auth-form-sub a { color: var(--primary); font-weight: 600; }
+    .social-auth { display: flex; gap: 12px; margin-bottom: 20px; }
+    .social-btn { flex: 1; padding: 12px; border: 2px solid var(--border-color); background: #fff; border-radius: 10px; display: flex; align-items: center; justify-content: center; gap: 8px; font-weight: 600; font-size: 14px; cursor: pointer; transition: var(--transition); color: var(--text-dark); text-decoration: none; }
+    .social-btn:hover { border-color: var(--primary); color: var(--primary); }
+    .divider-text { text-align: center; position: relative; margin: 16px 0; color: var(--text-muted); font-size: 13px; }
+    .divider-text::before, .divider-text::after { content: ''; position: absolute; top: 50%; width: calc(50% - 30px); height: 1px; background: var(--border-color); }
+    .divider-text::before { left: 0; } .divider-text::after { right: 0; }
+    .auth-label { font-size: 14px; font-weight: 600; color: var(--secondary); margin-bottom: 6px; display: block; }
+    .auth-input { width: 100%; padding: 13px 16px 13px 44px; border: 2px solid var(--border-color); border-radius: 10px; font-size: 15px; transition: var(--transition); background: #fff; color: var(--text-dark); outline: none; }
+    .auth-input:focus { border-color: var(--primary); box-shadow: 0 0 0 4px rgba(200,75,26,0.1); }
+    .auth-input-icon { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: var(--text-muted); font-size: 16px; }
+    .auth-input-wrap { position: relative; }
+    .pw-toggle { position: absolute; right: 14px; top: 50%; transform: translateY(-50%); cursor: pointer; color: var(--text-muted); font-size: 16px; background: none; border: none; padding: 0; }
+    .pw-toggle:hover { color: var(--primary); }
+    .auth-submit { width: 100%; padding: 15px; background: var(--primary); color: #fff; border: none; border-radius: 50px; font-weight: 700; font-size: 16px; cursor: pointer; transition: var(--transition); display: flex; align-items: center; justify-content: center; gap: 8px; }
+    .auth-submit:hover { background: var(--primary-dark); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(200,75,26,0.3); }
+    .perk { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 20px; }
+    .perk-icon { width: 40px; height: 40px; min-width: 40px; background: rgba(255,255,255,0.15); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 18px; }
+    .perk h6 { color: #fff; font-family: 'Inter', sans-serif; font-weight: 700; margin-bottom: 3px; }
+    .perk p { color: rgba(255,255,255,0.7); font-size: 13px; margin: 0; }
+    .strength-bar { height: 4px; background: var(--border-color); border-radius: 50px; margin-top: 6px; overflow: hidden; transition: var(--transition); }
+    .strength-fill { height: 100%; border-radius: 50px; width: 0; transition: width 0.3s ease, background 0.3s ease; }
+    @media (max-width: 991.98px) { .auth-left { display: none; } .auth-right { width: 100%; padding: 36px 24px; } }
+  </style>
+</head>
+<body>
+<div class="auth-wrap">
+
+  <!-- Left Panel -->
+  <div class="auth-left">
+    <div class="auth-left-content">
+      <div class="auth-brand">
+        <div class="auth-brand-icon"><i class="bi bi-heart-fill text-white" style="font-size:18px;"></i></div>
+        HopeWave
+      </div>
+      <h2 style="font-size:clamp(1.8rem,2.5vw,2.4rem);color:#fff;margin-bottom:16px;line-height:1.2;">Join 40,000 Donors<br/>Changing the World</h2>
+      <p style="color:rgba(255,255,255,0.8);font-size:1rem;line-height:1.8;margin-bottom:36px;">Create your free account and start making a measurable difference today.</p>
+
+      <div class="perk">
+        <div class="perk-icon"><i class="bi bi-bar-chart-fill"></i></div>
+        <div><h6>Live Impact Dashboard</h6><p>Track exactly how your donations are being used in real time.</p></div>
+      </div>
+      <div class="perk">
+        <div class="perk-icon"><i class="bi bi-receipt"></i></div>
+        <div><h6>Instant Tax Receipts</h6><p>Automated donation receipts for all your tax-deductible gifts.</p></div>
+      </div>
+      <div class="perk">
+        <div class="perk-icon"><i class="bi bi-bell-fill"></i></div>
+        <div><h6>Campaign Updates</h6><p>Get notified when your causes hit milestones and funding goals.</p></div>
+      </div>
+      <div class="perk">
+        <div class="perk-icon"><i class="bi bi-people-fill"></i></div>
+        <div><h6>Donor Community</h6><p>Connect with fellow changemakers and share your giving stories.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Right Panel -->
+  <div class="auth-right">
+    <div style="max-width:440px;margin:0 auto;width:100%;">
+      <!-- Mobile brand -->
+      <div class="d-lg-none mb-4">
+        <a href="../index.html" style="font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:800;color:var(--secondary);display:flex;align-items:center;gap:8px;text-decoration:none;">
+          <div style="width:32px;height:32px;background:var(--primary);border-radius:8px;display:flex;align-items:center;justify-content:center;"><i class="bi bi-heart-fill text-white" style="font-size:14px;"></i></div>
+          Hope<span style="color:var(--primary);">Wave</span>
+        </a>
+      </div>
+
+      <h2 class="auth-form-title">Create Account</h2>
+      <p class="auth-form-sub">Already have one? <a href="login.html">Sign in here</a></p>
+
+      <div class="social-auth">
+        <a href="#" class="social-btn">
+          <svg width="18" height="18" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+          Google
+        </a>
+        <a href="#" class="social-btn">
+          <i class="bi bi-facebook" style="color:#1877F2;font-size:17px;"></i>
+          Facebook
+        </a>
+      </div>
+
+      <div class="divider-text">or register with email</div>
+
+      <form onsubmit="event.preventDefault(); window.location.href='login.html';">
+        <div class="row gy-3">
+          <div class="col-sm-6">
+            <label class="auth-label">First Name</label>
+            <div class="auth-input-wrap" style="position:relative;">
+              <i class="bi bi-person-fill auth-input-icon"></i>
+              <input type="text" class="auth-input" placeholder="John" required />
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <label class="auth-label">Last Name</label>
+            <div class="auth-input-wrap" style="position:relative;">
+              <i class="bi bi-person-fill auth-input-icon"></i>
+              <input type="text" class="auth-input" placeholder="Doe" required />
+            </div>
+          </div>
+          <div class="col-12">
+            <label class="auth-label">Email Address</label>
+            <div class="auth-input-wrap" style="position:relative;">
+              <i class="bi bi-envelope-fill auth-input-icon"></i>
+              <input type="email" class="auth-input" placeholder="you@example.com" required />
+            </div>
+          </div>
+          <div class="col-12">
+            <label class="auth-label">Password</label>
+            <div class="auth-input-wrap" style="position:relative;">
+              <i class="bi bi-lock-fill auth-input-icon"></i>
+              <input type="password" id="pw1" class="auth-input" placeholder="Minimum 8 characters" oninput="checkStrength(this.value)" required />
+              <button type="button" class="pw-toggle" onclick="togglePw('pw1',this)"><i class="bi bi-eye-fill"></i></button>
+            </div>
+            <div class="strength-bar"><div class="strength-fill" id="strengthFill"></div></div>
+            <div id="strengthLabel" style="font-size:12px;color:var(--text-muted);margin-top:4px;"></div>
+          </div>
+          <div class="col-12">
+            <label class="auth-label">Confirm Password</label>
+            <div class="auth-input-wrap" style="position:relative;">
+              <i class="bi bi-lock-fill auth-input-icon"></i>
+              <input type="password" id="pw2" class="auth-input" placeholder="Repeat password" required />
+              <button type="button" class="pw-toggle" onclick="togglePw('pw2',this)"><i class="bi bi-eye-fill"></i></button>
+            </div>
+          </div>
+          <div class="col-12">
+            <label class="auth-label">I am joining as</label>
+            <select class="auth-input" style="padding-left:16px;">
+              <option>Individual Donor</option>
+              <option>Monthly Supporter</option>
+              <option>Corporate / Organization</option>
+              <option>Volunteer</option>
+            </select>
+          </div>
+          <div class="col-12">
+            <label style="display:flex;align-items:flex-start;gap:10px;cursor:pointer;font-size:14px;color:var(--text-muted);">
+              <input type="checkbox" required style="accent-color:var(--primary);width:16px;height:16px;margin-top:2px;flex-shrink:0;" />
+              I agree to the <a href="#" style="color:var(--primary);font-weight:600;margin-left:4px;">Terms of Service</a> &amp; <a href="#" style="color:var(--primary);font-weight:600;margin-left:4px;">Privacy Policy</a>
+            </label>
+          </div>
+          <div class="col-12">
+            <label style="display:flex;align-items:flex-start;gap:10px;cursor:pointer;font-size:14px;color:var(--text-muted);">
+              <input type="checkbox" style="accent-color:var(--primary);width:16px;height:16px;margin-top:2px;flex-shrink:0;" />
+              Send me impact updates and stories (optional)
+            </label>
+          </div>
+          <div class="col-12">
+            <button type="submit" class="auth-submit">
+              <i class="bi bi-person-plus-fill"></i> Create My Account
+            </button>
+          </div>
+        </div>
+      </form>
+
+      <div style="text-align:center;font-size:13px;color:var(--text-muted);margin-top:20px;">
+        Already registered? <a href="login.html" style="color:var(--primary);font-weight:600;">Sign in</a>
+      </div>
+      <div style="text-align:center;margin-top:12px;">
+        <a href="../index.html" style="font-size:13px;color:var(--text-muted);text-decoration:none;"><i class="bi bi-arrow-left me-1"></i>Back to Homepage</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+function togglePw(id, btn) {
+  const input = document.getElementById(id);
+  const icon = btn.querySelector('i');
+  if (input.type === 'password') { input.type = 'text'; icon.className = 'bi bi-eye-slash-fill'; }
+  else { input.type = 'password'; icon.className = 'bi bi-eye-fill'; }
+}
+function checkStrength(val) {
+  const fill = document.getElementById('strengthFill');
+  const label = document.getElementById('strengthLabel');
+  let score = 0;
+  if (val.length >= 8) score++;
+  if (/[A-Z]/.test(val)) score++;
+  if (/[0-9]/.test(val)) score++;
+  if (/[^A-Za-z0-9]/.test(val)) score++;
+  const levels = [
+    { w: '0%', c: 'transparent', t: '' },
+    { w: '25%', c: '#e53e3e', t: 'Weak' },
+    { w: '50%', c: '#dd6b20', t: 'Fair' },
+    { w: '75%', c: '#d69e2e', t: 'Good' },
+    { w: '100%', c: '#38a169', t: 'Strong' },
+  ];
+  fill.style.width = levels[score].w;
+  fill.style.background = levels[score].c;
+  label.textContent = levels[score].t ? `Password strength: ${levels[score].t}` : '';
+  label.style.color = levels[score].c;
+}
+</script>
+</body>
+</html>
