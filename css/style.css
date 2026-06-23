@@ -289,7 +289,7 @@ img { max-width: 100%; height: auto; }
   letter-spacing: 1px;
   text-transform: uppercase;
 }
-.hero-content { padding: 60px 0; }
+.hero-content { padding: 120px 0; }
 .hero-eyebrow {
   display: inline-flex;
   align-items: center;
