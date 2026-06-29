@@ -13,7 +13,13 @@
       <span class="accent">Hope Wave</span>
     </a>
     <ul class="hw-links" id="hw-links-list" role="list">
-      <li><a href="${R}index.html">Home</a></li>
+      <li class="has-drop">
+        <a href="${R}index.html" aria-haspopup="true">Home <i class="bi bi-chevron-down" style="font-size:9px"></i></a>
+        <div class="hw-drop" role="menu">
+          <a href="${R}pages/home-v2.html" role="menuitem">Home V2</a>
+          <a href="${R}pages/home-v3.html" role="menuitem">Home V3</a>
+        </div>
+      </li>
       <li><a href="${R}pages/about.html">About</a></li>
       <li class="has-drop">
         <a href="${R}pages/causes.html" aria-haspopup="true">Causes <i class="bi bi-chevron-down" style="font-size:9px"></i></a>
@@ -34,6 +40,7 @@
           <a href="${R}pages/faq.html" role="menuitem">FAQ</a>
           <a href="${R}pages/partners.html" role="menuitem">Partners</a>
           <a href="${R}pages/contact.html" role="menuitem">Contact</a>
+          <a href="${R}pages/404.html" role="menuitem">404</a>
         </div>
       </li>
     </ul>
