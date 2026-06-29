@@ -1,0 +1,7 @@
+// ================================================================
+// abstracts/_index.scss — Barrel export
+// ================================================================
+
+@forward 'variables';
+@forward 'functions';
+@forward 'mixins';

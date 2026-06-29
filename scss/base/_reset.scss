@@ -1,0 +1,60 @@
+// ================================================================
+// base/_reset.scss — Box-model reset & sensible defaults
+// ================================================================
+
+@use '../abstracts' as a;
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Roboto+Condensed:wght@700&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: a.$font-body;
+  font-size: 16px;
+  line-height: 1.7;
+  color: a.$text;
+  background: a.$white;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: a.$green;
+  text-decoration: none;
+  transition: a.$tr;
+
+  &:hover {
+    color: a.$green-dark;
+  }
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+}
+
+input,
+select,
+textarea {
+  font-family: inherit;
+}

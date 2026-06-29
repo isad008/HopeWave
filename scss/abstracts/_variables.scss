@@ -1,0 +1,69 @@
+// ================================================================
+// _variables.scss — Design Tokens
+// HopeWave v3 · IRUSA-inspired color scheme
+// ================================================================
+
+// ── Brand Colors ─────────────────────────────────────────────────
+$green:       #1D7A3A;
+$green-dark:  #145C2A;
+$green-mid:   #27A34F;
+$green-pale:  #E8F5EC;
+
+$teal:        #16B7CC;
+$teal-dark:   #0E96AA;
+
+$red:         #C8372D;
+$red-dark:    #A62820;
+
+$gold:        #F5A623;
+$gold-dark:   #C47F00;
+
+$navy:        #1A2636;
+$navy-light:  #223040;
+
+$white:       #FFFFFF;
+
+// ── Neutrals ─────────────────────────────────────────────────────
+$gray-bg:     #F5F5F5;
+$gray-light:  #E5E5E5;
+$text:        #1A1A1A;
+$text-2:      #3A3A3A;
+$text-3:      #666666;
+
+// ── On-dark overlays ─────────────────────────────────────────────
+$od80:        rgba(255, 255, 255, 0.80);
+$od55:        rgba(255, 255, 255, 0.55);
+$od30:        rgba(255, 255, 255, 0.30);
+$border-d:    rgba(255, 255, 255, 0.10);
+
+// ── Radii ─────────────────────────────────────────────────────────
+$r-xs:   4px;
+$r-sm:   8px;
+$r-md:   12px;
+
+// ── Shadows ───────────────────────────────────────────────────────
+$shadow-sm:   0 2px 8px  rgba(0, 0, 0, 0.08);
+$shadow-md:   0 4px 20px rgba(0, 0, 0, 0.12);
+$shadow-lg:   0 8px 40px rgba(0, 0, 0, 0.16);
+
+// ── Motion ────────────────────────────────────────────────────────
+$ease:    cubic-bezier(0.4, 0, 0.2, 1);
+$tr:      all 0.25s #{$ease};
+$tr-slow: all 0.45s #{$ease};
+
+// ── Typography ────────────────────────────────────────────────────
+$font-body:        'Roboto', system-ui, sans-serif;
+$font-condensed:   'Roboto Condensed', 'Roboto', sans-serif;
+
+// ── Breakpoints ───────────────────────────────────────────────────
+$bp-xl:    1080px;
+$bp-md:    768px;
+$bp-sm:    480px;
+
+// ── Layout ────────────────────────────────────────────────────────
+$container-max:    1200px;
+$container-pad:    24px;
+
+// ── CSS custom properties (emitted to :root) ──────────────────────
+// These mirror the SCSS vars so runtime JS / HTML can reference them.
+// See base/_root.scss

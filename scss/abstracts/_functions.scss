@@ -1,0 +1,42 @@
+// ================================================================
+// _functions.scss — Utility functions
+// ================================================================
+
+@use 'sass:math';
+@use 'variables' as v;
+
+// ── px → rem ──────────────────────────────────────────────────────
+@function rem($px, $base: 16) {
+  @return math.div($px, $base) * 1rem;
+}
+
+// ── Tint (mix color with white) ───────────────────────────────────
+@function tint($color, $pct) {
+  @return mix(#fff, $color, $pct);
+}
+
+// ── Shade (mix color with black) ─────────────────────────────────
+@function shade($color, $pct) {
+  @return mix(#000, $color, $pct);
+}
+
+// ── Alpha helper ─────────────────────────────────────────────────
+@function a($color, $alpha) {
+  @return rgba($color, $alpha);
+}
+
+// ── z-index map ──────────────────────────────────────────────────
+$z-layers: (
+  'base':      0,
+  'above':     1,
+  'dropdown':  100,
+  'sticky':    200,
+  'nav':       1000,
+  'mobile-nav': 999,
+  'lightbox':  9999,
+  'toast':     10000
+);
+
+@function z($layer) {
+  @return map-get($z-layers, $layer);
+}

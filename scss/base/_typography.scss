@@ -1,0 +1,68 @@
+// ================================================================
+// base/_typography.scss — Headings, scale, section labels
+// ================================================================
+
+@use '../abstracts' as a;
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: a.$font-condensed;
+  font-weight: 700;
+  line-height: 1.15;
+  color: a.$text;
+}
+
+.display-xl { @include a.fluid-type(2.6rem, 5.5vw, 5rem);   letter-spacing: -0.01em; }
+.display-lg { @include a.fluid-type(2rem,   4vw,   3.8rem);  letter-spacing: -0.01em; }
+.display-md { @include a.fluid-type(1.7rem, 3vw,   2.7rem);  }
+.display-sm { @include a.fluid-type(1.3rem, 2.2vw, 1.9rem);  }
+
+// ── Section label ─────────────────────────────────────────────────
+.section-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+
+  &-center { justify-content: center; }
+
+  .line {
+    display: inline-block;
+    width: 32px;
+    height: 3px;
+    background: a.$green;
+    border-radius: 2px;
+    flex-shrink: 0;
+
+    &-teal  { background: a.$teal !important; }
+    &-white { background: rgba(255, 255, 255, 0.5) !important; }
+  }
+
+  .text {
+    @include a.label-uppercase(11px, 0.14em, a.$green);
+
+    &-teal       { color: a.$teal !important; }
+    &-white      { color: #fff !important; }
+    &-white-muted { color: rgba(255, 255, 255, 0.75) !important; }
+  }
+}
+
+// Modifier aliases
+.line-teal        { background: a.$teal !important; }
+.line-white       { background: rgba(255, 255, 255, 0.5) !important; }
+.line-white-muted { background: rgba(255, 255, 255, 0.4) !important; }
+.text-teal        { color: a.$teal !important; }
+.text-white-muted { color: rgba(255, 255, 255, 0.75) !important; }
+
+// ── Section headings (Roboto Condensed, used inline) ──────────────
+.section-h4 {
+  font-family: a.$font-condensed;
+  font-weight: 700;
+  margin-top: 32px;
+  margin-bottom: 12px;
+}
+
+.section-h6 {
+  font-family: a.$font-condensed;
+  font-weight: 700;
+  margin-bottom: 16px;
+}

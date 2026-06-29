@@ -1,0 +1,265 @@
+// ================================================================
+// layout/_navbar.scss — Fixed navigation + mobile panel
+// ================================================================
+
+@use '../abstracts' as a;
+
+// ── Desktop nav ───────────────────────────────────────────────────
+.hw-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: a.$navy;
+  transition: background 0.25s ease, box-shadow 0.25s ease;
+
+  &.scrolled {
+    background: rgba(a.$navy, 0.97);
+    backdrop-filter: blur(16px);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.35);
+  }
+}
+
+.hw-nav-inner {
+  max-width: 1320px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+  padding: 0 20px;
+  gap: 8px;
+}
+
+// ── Brand ─────────────────────────────────────────────────────────
+.hw-brand {
+  font-family: a.$font-condensed;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  flex-shrink: 0;
+  white-space: nowrap;
+
+  .accent { color: a.$teal; }
+}
+
+.hw-brand-icon {
+  @include a.icon-badge(32px, a.$green, #fff, 14px);
+  flex-shrink: 0;
+}
+
+// ── Desktop links ─────────────────────────────────────────────────
+.hw-links {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  justify-content: center;
+
+  > li {
+    position: relative;
+
+    > a {
+      font-size: 13px;
+      font-weight: 500;
+      color: a.$od80;
+      padding: 8px 11px;
+      border-radius: a.$r-xs;
+      transition: a.$tr;
+      display: flex;
+      align-items: center;
+      gap: 3px;
+      text-decoration: none;
+      white-space: nowrap;
+
+      &:hover,
+      &.active {
+        color: #fff;
+        background: rgba(255, 255, 255, 0.1);
+      }
+    }
+  }
+}
+
+// ── Dropdown ──────────────────────────────────────────────────────
+.has-drop {
+  position: relative;
+
+  &:hover .hw-drop {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+.hw-drop {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%) translateY(-6px);
+  background: a.$navy;
+  border: 1px solid a.$border-d;
+  border-radius: a.$r-sm;
+  padding: 6px;
+  min-width: 200px;
+  opacity: 0;
+  visibility: hidden;
+  transition: a.$tr;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.4);
+  z-index: 200;
+
+  a {
+    display: block;
+    padding: 9px 13px;
+    border-radius: a.$r-xs;
+    font-size: 13px;
+    color: a.$od80;
+    text-decoration: none;
+    transition: a.$tr;
+    white-space: nowrap;
+
+    &:hover {
+      background: rgba(a.$teal, 0.12);
+      color: a.$teal;
+    }
+  }
+}
+
+// ── Nav right ─────────────────────────────────────────────────────
+.hw-right {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.hw-signin {
+  font-size: 13px;
+  font-weight: 600;
+  color: a.$od80;
+  padding: 7px 13px;
+  border-radius: a.$r-xs;
+  text-decoration: none;
+  transition: a.$tr;
+  white-space: nowrap;
+
+  &:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.1);
+  }
+}
+
+.hw-donate-btn {
+  font-size: 13px;
+  font-weight: 700;
+  color: #fff;
+  padding: 8px 18px;
+  background: a.$red;
+  border-radius: a.$r-xs;
+  border: none;
+  text-decoration: none;
+  transition: a.$tr;
+  white-space: nowrap;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  &:hover {
+    background: a.$red-dark;
+    color: #fff;
+  }
+}
+
+// ── Hamburger ─────────────────────────────────────────────────────
+.hw-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 22px;
+  padding: 4px 6px;
+  cursor: pointer;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+// ── Mobile nav panel ──────────────────────────────────────────────
+.hw-mobile-nav {
+  display: none;
+  position: fixed;
+  top: 64px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: a.$navy;
+  overflow-y: auto;
+  z-index: 999;
+  padding: 8px 0 40px;
+  border-top: 1px solid a.$border-d;
+
+  &.open { display: block; }
+
+  a {
+    display: block;
+    padding: 13px 28px;
+    font-size: 15px;
+    font-weight: 500;
+    color: a.$od80;
+    text-decoration: none;
+    transition: a.$tr;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+
+    &:hover,
+    &.active {
+      color: #fff;
+      background: rgba(255, 255, 255, 0.06);
+    }
+  }
+}
+
+.mob-group-label {
+  padding: 18px 28px 6px;
+  @include a.label-uppercase(10px, 0.14em, a.$teal);
+}
+
+.mob-donate-wrap { padding: 20px 24px 0; }
+
+.mob-donate {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 14px;
+  text-align: center;
+  background: a.$red;
+  color: #fff;
+  font-weight: 700;
+  border-radius: a.$r-xs;
+  font-size: 15px;
+  text-decoration: none;
+  transition: a.$tr;
+
+  &:hover {
+    background: a.$red-dark;
+    color: #fff;
+  }
+}
+
+// ── Responsive ────────────────────────────────────────────────────
+@include a.below-xl {
+  .hw-links  { display: none !important; }
+  .hw-signin { display: none; }
+  .hw-toggle { display: block; }
+  .hw-nav-inner { padding: 0 16px; }
+}
+
+@include a.below-sm {
+  .hw-nav-inner    { height: 58px; }
+  .hw-mobile-nav   { top: 58px; }
+}

@@ -1,0 +1,68 @@
+// ================================================================
+// layout/_layout.scss — Container, grids, section spacing
+// ================================================================
+
+@use '../abstracts' as a;
+
+// ── Container ─────────────────────────────────────────────────────
+.container {
+  max-width: a.$container-max;
+  margin: 0 auto;
+  padding: 0 a.$container-pad;
+}
+
+// ── Section spacing ───────────────────────────────────────────────
+.section-xl { @include a.section(xl); }
+.section-lg { @include a.section(lg); }
+.section-md { @include a.section(md); }
+.section-sm { @include a.section(sm); }
+
+// ── Named grids ───────────────────────────────────────────────────
+.grid-2    { display: grid; grid-template-columns: 1fr 1fr;            gap: 24px; }
+.grid-3    { display: grid; grid-template-columns: repeat(3, 1fr);     gap: 24px; }
+.grid-4    { display: grid; grid-template-columns: repeat(4, 1fr);     gap: 20px; }
+.grid-6    { display: grid; grid-template-columns: repeat(6, 1fr);     gap: 12px; }
+.grid-half { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+
+// ── Sidebar layouts ───────────────────────────────────────────────
+.layout-sidebar { display: grid; grid-template-columns: 2fr 1fr; gap: 40px; align-items: start; }
+.layout-2col    { display: grid; grid-template-columns: 1fr 1fr;  gap: 40px; align-items: start; }
+
+// ── Image grids ───────────────────────────────────────────────────
+.img-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+
+// ── Flex helpers ──────────────────────────────────────────────────
+.flex-between { @include a.flex-between; }
+.text-center  { text-align: center; }
+.gap-10       { gap: 10px; }
+
+// ── Background variants ───────────────────────────────────────────
+.bg-navy      { background: a.$navy;     }
+.bg-gray      { background: a.$gray-bg;  }
+.bg-green-pale { background: a.$green-pale; }
+
+// ── Responsive grid collapse ──────────────────────────────────────
+@include a.below-xl {
+  .grid-half        { grid-template-columns: 1fr; gap: 36px; }
+  .grid-6           { grid-template-columns: repeat(3, 1fr); }
+  .layout-sidebar,
+  .layout-2col      { grid-template-columns: 1fr; }
+}
+
+@include a.below-md {
+  .section-xl { padding: 68px 0; }
+  .section-lg { padding: 56px 0; }
+  .section-md { padding: 44px 0; }
+  .section-sm { padding: 32px 0; }
+
+  .grid-2,
+  .grid-3           { grid-template-columns: 1fr; }
+  .grid-4           { grid-template-columns: 1fr 1fr; }
+  .grid-6           { grid-template-columns: repeat(2, 1fr); }
+}
+
+@include a.below-sm {
+  .container        { padding: 0 16px; }
+  .grid-4,
+  .grid-6           { grid-template-columns: 1fr 1fr; }
+}

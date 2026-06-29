@@ -1,0 +1,71 @@
+// ================================================================
+// utilities/_utilities.scss — Atomic helpers, animations, spacing
+// ================================================================
+
+@use '../abstracts' as a;
+
+// ── Reveal animations ─────────────────────────────────────────────
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+
+  &.visible { opacity: 1; transform: none; }
+
+  &-delay-1 { transition-delay: 0.10s; }
+  &-delay-2 { transition-delay: 0.20s; }
+  &-delay-3 { transition-delay: 0.30s; }
+  &-delay-4 { transition-delay: 0.40s; }
+}
+
+// ── Color utilities ───────────────────────────────────────────────
+.text-white    { color: #fff; }
+.text-green    { color: a.$green; }
+.text-teal-color { color: a.$teal; }
+.text-red-color  { color: a.$red; }
+.text-gold     { color: a.$gold; }
+.text-muted    { color: a.$text-3; }
+.text-od80     { color: a.$od80; }
+.text-bold     { font-weight: 700; }
+.text-sm       { font-size: 13px; }
+.text-xs       { font-size: 12px; }
+.text-center   { text-align: center; }
+
+// Cert badge icon colours
+.cert-icon-teal      { color: a.$teal; }
+.cert-icon-gold      { color: a.$gold; }
+.cert-icon-green-mid { color: a.$green-mid; }
+.cert-icon-red       { color: a.$red; }
+
+// ── Background utilities ──────────────────────────────────────────
+.bg-navy       { background: a.$navy; }
+.bg-gray       { background: a.$gray-bg; }
+.bg-green-pale { background: a.$green-pale; }
+
+// ── Spacing — margin-top ─────────────────────────────────────────
+@each $size in 8, 12, 16, 24, 32, 48 {
+  .mt-#{$size} { margin-top: #{$size}px; }
+}
+
+// ── Spacing — margin-bottom ───────────────────────────────────────
+@each $size in 8, 16, 24, 32, 48 {
+  .mb-#{$size} { margin-bottom: #{$size}px; }
+}
+
+// ── Gap utility ───────────────────────────────────────────────────
+.gap-10 { gap: 10px; }
+
+// ── Display utilities ─────────────────────────────────────────────
+.flex-between { @include a.flex-between; }
+
+// ── Event date-box colour variants ───────────────────────────────
+.edb-red    { background: a.$red !important; }
+.edb-teal   { background: a.$teal-dark !important; }
+.edb-purple { background: #5B3DC0 !important; }
+.edb-orange { background: #B35A20 !important; }
+.edb-dark   { background: a.$navy-light !important; }
+
+// ── V2 step icon variants ─────────────────────────────────────────
+.v2-step-icon-red  { background: a.$red !important; }
+.v2-step-icon-teal { background: a.$teal !important; }
+.v2-step-icon-gold { background: a.$gold-dark !important; }

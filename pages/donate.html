@@ -1,261 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Donate — HopeWave Nonprofit Charity Template</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="../css/style.css" />
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta name="description" content="Support HopeWave with a one-time or monthly gift."/>
+<title>Donate &mdash; HopeWave</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"/>
+<link rel="stylesheet" href="../css/style.css"/>
+  <link rel="stylesheet" href="../css/pages.css"/>
 </head>
 <body>
-
-<!-- Preloader -->
-<div class="preloader">
-  <div class="preloader-logo">Hope<span>Wave</span></div>
-  <div class="preloader-bar"><div class="preloader-fill"></div></div>
-</div>
-
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-hopewave fixed-top">
-  <div class="container">
-    <a class="navbar-brand" href="../index.html">
-      <div class="brand-icon"><i class="bi bi-heart-fill text-white" style="font-size:16px;"></i></div>
-      Hope<span>Wave</span>
-    </a>
-    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMain">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navMain">
-      <ul class="navbar-nav mx-auto gap-1">
-        <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-        <li class="nav-item"><a class="nav-link" href="causes.html">Causes</a></li>
-        <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
-        <li class="nav-item"><a class="nav-link" href="volunteer.html">Volunteer</a></li>
-        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-      </ul>
-      <a href="donate.html" class="nav-link navbar-donate-btn"><i class="bi bi-heart-fill me-1"></i> Donate Now</a>
-    </div>
+<div id="nav-inject"></div>
+<section class="page-hero">
+  <div class="page-hero-shape" aria-hidden="true"></div>
+  <div class="page-hero-inner container">
+    <div class="section-label"><span class="line"></span><span class="text text-white">Make a Difference</span></div>
+    <h1 class="display-lg">Donate</h1>
+    <nav class="breadcrumb"><a href="../index.html">Home</a><span class="sep">/</span><span class="cur">Donate</span></nav>
   </div>
-</nav>
+</section>
 
-<!-- Page Hero -->
-<div class="page-hero">
-  <div class="container position-relative" style="z-index:2;">
-    <div class="text-center">
-      <h1 class="page-hero-title">Make a Donation</h1>
-      <nav aria-label="breadcrumb">
-        <ol class="breadcrumb justify-content-center">
-          <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
-          <li class="breadcrumb-item active">Donate</li>
-        </ol>
-      </nav>
-    </div>
-  </div>
-</div>
-
-<!-- Donate Section -->
-<section class="section-pad">
+<section class="section-xl">
   <div class="container">
-    <div class="row gy-5">
-      <!-- Form -->
-      <div class="col-lg-7">
-        <div class="donate-form-card fade-up">
-          <h3 class="mb-4" style="color:var(--secondary);">Choose Your Donation</h3>
-
-          <!-- One-time / Monthly Toggle -->
-          <div class="d-flex gap-3 mb-4">
-            <button class="donate-tab-btn active">One-Time</button>
-            <button class="donate-tab-btn">Monthly</button>
+    <div class="layout-2col">
+      <div class="content-card content-card-pad reveal">
+        <h3 class="display-sm mb-8">Choose Your Gift</h3>
+        <p class="text-muted mb-24">One-time or monthly — any amount makes a measurable difference. 98% of every dollar reaches programs. Instant tax receipt emailed to you.</p>
+        <form id="donate-form" novalidate>
+          <div class="give-tabs"><button type="button" class="give-tab active">One-time</button><button type="button" class="give-tab">Monthly</button></div>
+          <div class="amount-grid">
+            <div class="amount-opt">$10</div><div class="amount-opt sel">$25</div><div class="amount-opt">$50</div>
+            <div class="amount-opt">$100</div><div class="amount-opt">$250</div><div class="amount-opt">Custom</div>
           </div>
-
-          <!-- Cause Selector -->
-          <div class="mb-4">
-            <label class="form-label-custom">Select a Cause</label>
-            <select class="form-control-custom">
-              <option>Where It's Needed Most</option>
-              <option>Clean Water Initiative</option>
-              <option>Education Fund</option>
-              <option>Healthcare Outreach</option>
-              <option>Disaster Relief</option>
-            </select>
+          <div class="form-group"><label class="form-label">Custom Amount</label><input type="number" id="customAmount" class="form-input" placeholder="Enter amount ($)" min="1" aria-label="Custom donation amount"/></div>
+          <div class="form-group"><label class="form-label">Where Most Needed</label><select class="form-select"><option>Where Most Needed</option><option>Water &mdash; Kenya</option><option>Education &mdash; Nepal</option><option>Healthcare &mdash; Bangladesh</option><option>Food Relief &mdash; Africa</option><option>Environment &mdash; Amazon</option><option>Disaster Relief &mdash; SE Asia</option></select></div>
+          <div class="form-row mb-16">
+            <div class="form-group" class="form-group-row"><label class="form-label">First Name</label><input type="text" class="form-input" placeholder="Jane" required/></div>
+            <div class="form-group" class="form-group-row"><label class="form-label">Last Name</label><input type="text" class="form-input" placeholder="Doe" required/></div>
           </div>
-
-          <!-- Amount Options -->
-          <div class="mb-2">
-            <label class="form-label-custom">Select Amount</label>
+          <div class="form-group"><label class="form-label">Email Address</label><input type="email" class="form-input" placeholder="jane@example.com" required/></div>
+          <div class="form-group"><label class="form-label">Card Number</label><input type="text" class="form-input" placeholder="&bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull;" maxlength="19" aria-label="Credit card number"/></div>
+          <div class="form-row mb-16">
+            <div class="form-group" class="form-group-row"><label class="form-label">Expiry</label><input type="text" class="form-input" placeholder="MM / YY" maxlength="7" aria-label="Card expiry date"/></div>
+            <div class="form-group" class="form-group-row"><label class="form-label">CVV</label><input type="text" class="form-input" placeholder="&bull;&bull;&bull;" maxlength="4" aria-label="CVV security code"/></div>
           </div>
-          <div class="amount-grid mb-3">
-            <div class="amount-option selected" data-amount="10">$10</div>
-            <div class="amount-option" data-amount="25">$25</div>
-            <div class="amount-option" data-amount="50">$50</div>
-            <div class="amount-option" data-amount="100">$100</div>
-            <div class="amount-option" data-amount="250">$250</div>
-            <div class="amount-option" data-amount="custom">Custom</div>
-          </div>
-          <div class="mb-4">
-            <input type="number" id="customAmount" class="form-control-custom" placeholder="Enter custom amount ($)" value="10" />
-          </div>
-
-          <hr class="my-4" />
-          <h5 class="mb-3" style="color:var(--secondary);">Your Information</h5>
-          <form class="donate-form-el">
-            <div class="row gy-3">
-              <div class="col-sm-6">
-                <label class="form-label-custom">First Name</label>
-                <input type="text" class="form-control-custom" placeholder="John" />
-              </div>
-              <div class="col-sm-6">
-                <label class="form-label-custom">Last Name</label>
-                <input type="text" class="form-control-custom" placeholder="Doe" />
-              </div>
-              <div class="col-12">
-                <label class="form-label-custom">Email Address</label>
-                <input type="email" class="form-control-custom" placeholder="john@example.com" />
-              </div>
-              <div class="col-12">
-                <label class="form-label-custom">Message (Optional)</label>
-                <textarea class="form-control-custom" rows="3" placeholder="Leave a message of support..."></textarea>
-              </div>
-            </div>
-
-            <hr class="my-4" />
-            <h5 class="mb-3" style="color:var(--secondary);">Payment Details</h5>
-            <div class="row gy-3">
-              <div class="col-12">
-                <label class="form-label-custom">Card Number</label>
-                <input type="text" class="form-control-custom" placeholder="1234 5678 9012 3456" />
-              </div>
-              <div class="col-sm-6">
-                <label class="form-label-custom">Expiry Date</label>
-                <input type="text" class="form-control-custom" placeholder="MM / YY" />
-              </div>
-              <div class="col-sm-6">
-                <label class="form-label-custom">CVV</label>
-                <input type="text" class="form-control-custom" placeholder="123" />
-              </div>
-            </div>
-
-            <button type="submit" class="btn-primary-custom w-100 justify-content-center mt-4" style="font-size:17px; padding:16px;">
-              <i class="bi bi-shield-lock-fill"></i> Complete Donation
-            </button>
-            <div class="secure-badge">
-              <i class="bi bi-shield-check-fill text-success"></i>
-              Your donation is secured with 256-bit SSL encryption
-            </div>
-          </form>
-        </div>
+          <button type="submit" class="btn btn-red btn-block"><i class="bi bi-lock-fill"></i> Give Securely Now</button>
+          <p class="qd-note mt-8"><i class="bi bi-shield-check text-green"></i> 256-bit SSL &middot; PCI DSS Level 1 &middot; Instant Receipt</p>
+        </form>
       </div>
-
-      <!-- Sidebar -->
-      <div class="col-lg-5">
-        <div class="donate-sidebar-card fade-up">
-          <h5 style="color:var(--secondary); margin-bottom:20px;">Your Impact</h5>
-          <div class="impact-item-row">
-            <div class="impact-icon-sm"><i class="bi bi-droplet-fill"></i></div>
-            <div>
-              <strong style="color:var(--secondary); font-size:15px;">$10</strong>
-              <p style="font-size:13px; color:var(--text-muted); margin:0;">Provides clean water to one family for a month</p>
-            </div>
-          </div>
-          <div class="impact-item-row">
-            <div class="impact-icon-sm"><i class="bi bi-book-fill"></i></div>
-            <div>
-              <strong style="color:var(--secondary); font-size:15px;">$25</strong>
-              <p style="font-size:13px; color:var(--text-muted); margin:0;">Buys school supplies for one student for a year</p>
-            </div>
-          </div>
-          <div class="impact-item-row">
-            <div class="impact-icon-sm"><i class="bi bi-heart-pulse-fill"></i></div>
-            <div>
-              <strong style="color:var(--secondary); font-size:15px;">$50</strong>
-              <p style="font-size:13px; color:var(--text-muted); margin:0;">Funds a medical consultation for 5 patients</p>
-            </div>
-          </div>
-          <div class="impact-item-row">
-            <div class="impact-icon-sm"><i class="bi bi-house-fill"></i></div>
-            <div>
-              <strong style="color:var(--secondary); font-size:15px;">$100</strong>
-              <p style="font-size:13px; color:var(--text-muted); margin:0;">Provides emergency shelter kit for a family</p>
-            </div>
+      <div class="reveal reveal-delay-1">
+        <div class="dark-card mb-20">
+          <div class="section-label"><span class="line line-teal"></span><span class="text text-teal">Your Giving Pledge</span></div>
+          <div class="check-list">
+            <div class="check-item"><i class="bi bi-check-circle-fill text-teal-color"></i><span>98% of every dollar reaches programs directly</span></div>
+            <div class="check-item"><i class="bi bi-check-circle-fill text-teal-color"></i><span>Instant tax receipt valid in US, UK, Canada &amp; Australia</span></div>
+            <div class="check-item"><i class="bi bi-check-circle-fill text-teal-color"></i><span>Real-time impact tracking dashboard access</span></div>
+            <div class="check-item"><i class="bi bi-check-circle-fill text-teal-color"></i><span>Personal impact update within 90 days</span></div>
+            <div class="check-item"><i class="bi bi-check-circle-fill text-teal-color"></i><span>Cancel monthly gifts anytime with one click</span></div>
           </div>
         </div>
-
-        <div class="donate-sidebar-card fade-up" style="background: var(--secondary);">
-          <h5 style="color:#fff; margin-bottom:16px;">Why Give to HopeWave?</h5>
-          <div style="color:rgba(255,255,255,0.8); font-size:14px; line-height:1.8;">
-            <div class="d-flex gap-2 mb-2"><i class="bi bi-check-circle-fill" style="color:var(--accent); margin-top:3px; flex-shrink:0;"></i> <span>98¢ of every dollar goes directly to programs</span></div>
-            <div class="d-flex gap-2 mb-2"><i class="bi bi-check-circle-fill" style="color:var(--accent); margin-top:3px; flex-shrink:0;"></i> <span>Full transparency with real-time impact tracking</span></div>
-            <div class="d-flex gap-2 mb-2"><i class="bi bi-check-circle-fill" style="color:var(--accent); margin-top:3px; flex-shrink:0;"></i> <span>Tax-deductible under IRS 501(c)(3)</span></div>
-            <div class="d-flex gap-2 mb-2"><i class="bi bi-check-circle-fill" style="color:var(--accent); margin-top:3px; flex-shrink:0;"></i> <span>Monthly giving can be cancelled anytime</span></div>
-            <div class="d-flex gap-2"><i class="bi bi-check-circle-fill" style="color:var(--accent); margin-top:3px; flex-shrink:0;"></i> <span>GuideStar Platinum-rated nonprofit</span></div>
-          </div>
+        <div class="content-card content-card-pad mb-20">
+          <h6 class="section-h6">What Your Gift Provides</h6>
+          <div class="benefit-card mb-12"><div class="benefit-icon bi-g"><i class="bi bi-droplet-fill"></i></div><div><h6>$25</h6><p>Provides water purification tablets for one family for a full month of safe drinking water.</p></div></div>
+          <div class="benefit-card mb-12"><div class="benefit-icon bi-t"><i class="bi bi-book-fill"></i></div><div><h6>$50</h6><p>Supplies a set of school textbooks for five students in one of our Nepal classrooms.</p></div></div>
+          <div class="benefit-card"><div class="benefit-icon bi-r"><i class="bi bi-heart-pulse-fill"></i></div><div><h6>$100</h6><p>Covers the cost of a mobile clinic consultation and treatment for four patients in Bangladesh.</p></div></div>
         </div>
-
-        <div class="donate-sidebar-card fade-up">
-          <h5 style="color:var(--secondary); margin-bottom:16px;">Other Ways to Give</h5>
-          <div class="d-flex flex-column gap-3">
-            <a href="#" class="d-flex align-items-center gap-3 text-decoration-none" style="color:var(--secondary);">
-              <div class="impact-icon-sm"><i class="bi bi-telephone-fill"></i></div>
-              <div><strong>Call Us</strong><div style="font-size:13px; color:var(--text-muted);">+1 (800) 467-3968</div></div>
-            </a>
-            <a href="#" class="d-flex align-items-center gap-3 text-decoration-none" style="color:var(--secondary);">
-              <div class="impact-icon-sm"><i class="bi bi-envelope-fill"></i></div>
-              <div><strong>Mail a Check</strong><div style="font-size:13px; color:var(--text-muted);">142 Hope Ave, NY 10001</div></div>
-            </a>
-            <a href="#" class="d-flex align-items-center gap-3 text-decoration-none" style="color:var(--secondary);">
-              <div class="impact-icon-sm"><i class="bi bi-building-fill"></i></div>
-              <div><strong>Corporate Giving</strong><div style="font-size:13px; color:var(--text-muted);">partnerships@hopewave.org</div></div>
-            </a>
+        <div class="dark-card">
+          <div class="section-label"><span class="line"></span><span class="text text-gold">Certifications</span></div>
+          <div class="check-list">
+            <div class="check-item"><i class="bi bi-shield-fill-check text-teal-color"></i><span>GuideStar Platinum Seal 2026</span></div>
+            <div class="check-item"><i class="bi bi-star-fill text-gold"></i><span>Charity Navigator 4-Star Rating</span></div>
+            <div class="check-item"><i class="bi bi-patch-check-fill text-green"></i><span>BBB Wise Giving Alliance Accredited</span></div>
           </div>
         </div>
       </div>
     </div>
   </div>
 </section>
-
-<!-- Footer -->
-<footer class="footer-main">
-  <div class="container">
-    <div class="row gy-4">
-      <div class="col-lg-5">
-        <div class="footer-brand-name mb-2">Hope<span style="color:var(--primary);">Wave</span></div>
-        <p class="footer-desc">Empowering communities through compassionate action.</p>
-        <div class="footer-social">
-          <a href="#"><i class="bi bi-facebook"></i></a>
-          <a href="#"><i class="bi bi-twitter-x"></i></a>
-          <a href="#"><i class="bi bi-instagram"></i></a>
-          <a href="#"><i class="bi bi-linkedin"></i></a>
-        </div>
-      </div>
-      <div class="col-lg-3">
-        <div class="footer-heading">Quick Links</div>
-        <ul class="footer-links">
-          <li><a href="../index.html"><i class="bi bi-chevron-right"></i>Home</a></li>
-          <li><a href="about.html"><i class="bi bi-chevron-right"></i>About</a></li>
-          <li><a href="causes.html"><i class="bi bi-chevron-right"></i>Causes</a></li>
-          <li><a href="volunteer.html"><i class="bi bi-chevron-right"></i>Volunteer</a></li>
-        </ul>
-      </div>
-      <div class="col-lg-4">
-        <div class="footer-heading">Contact</div>
-        <div class="footer-contact-item"><i class="bi bi-geo-alt-fill footer-contact-icon"></i><div>142 Hope Avenue, NY 10001</div></div>
-        <div class="footer-contact-item"><i class="bi bi-telephone-fill footer-contact-icon"></i><div>+1 (800) 467-3968</div></div>
-        <div class="footer-contact-item"><i class="bi bi-envelope-fill footer-contact-icon"></i><div>hello@hopewave.org</div></div>
-      </div>
-    </div>
-    <hr class="footer-divider" />
-  </div>
-  <div class="footer-bottom">
-    <div class="container">© 2026 HopeWave. All rights reserved.</div>
-  </div>
-</footer>
-
-<div class="scroll-top"><i class="bi bi-arrow-up"></i></div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<div id="footer-inject"></div>
+<script src="../js/components.js"></script>
 <script src="../js/main.js"></script>
 </body>
 </html>

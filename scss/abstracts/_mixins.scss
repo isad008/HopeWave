@@ -1,0 +1,138 @@
+// ================================================================
+// _mixins.scss — Reusable mixins
+// ================================================================
+
+@use 'variables' as v;
+
+// ── Responsive breakpoints ────────────────────────────────────────
+@mixin below-xl { @media (max-width: v.$bp-xl) { @content; } }
+@mixin below-md { @media (max-width: v.$bp-md) { @content; } }
+@mixin below-sm { @media (max-width: v.$bp-sm) { @content; } }
+
+// ── Flex center ───────────────────────────────────────────────────
+@mixin flex-center($gap: 0) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @if $gap != 0 { gap: $gap; }
+}
+
+// ── Flex between ─────────────────────────────────────────────────
+@mixin flex-between($wrap: wrap, $gap: 16px) {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: $wrap;
+  gap: $gap;
+}
+
+// ── Icon badge (square coloured icon) ────────────────────────────
+@mixin icon-badge($size: 46px, $bg: v.$green, $color: #fff, $font-size: 20px) {
+  width: $size;
+  height: $size;
+  min-width: $size;
+  border-radius: v.$r-xs;
+  background: $bg;
+  color: $color;
+  font-size: $font-size;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+// ── Card base ─────────────────────────────────────────────────────
+@mixin card-base {
+  background: #fff;
+  border: 1px solid v.$gray-light;
+  border-radius: v.$r-xs;
+  box-shadow: v.$shadow-sm;
+  transition: v.$tr;
+}
+
+// ── Card hover lift ───────────────────────────────────────────────
+@mixin card-hover($y: -4px) {
+  &:hover {
+    transform: translateY($y);
+    box-shadow: v.$shadow-lg;
+  }
+}
+
+// ── Label uppercase ───────────────────────────────────────────────
+@mixin label-uppercase($size: 10px, $spacing: 0.12em, $color: v.$green) {
+  font-family: v.$font-condensed;
+  font-size: $size;
+  font-weight: 700;
+  letter-spacing: $spacing;
+  text-transform: uppercase;
+  color: $color;
+}
+
+// ── Clamp font size ───────────────────────────────────────────────
+@mixin fluid-type($min, $fluid, $max) {
+  font-size: clamp(#{$min}, #{$fluid}, #{$max});
+}
+
+// ── Absolute cover (fill parent) ─────────────────────────────────
+@mixin cover {
+  position: absolute;
+  inset: 0;
+}
+
+// ── Overlay gradient ──────────────────────────────────────────────
+@mixin overlay-dark($direction: to right, $opacity-start: 0.92, $opacity-end: 0.16) {
+  background: linear-gradient(
+    $direction,
+    rgba(v.$navy, $opacity-start) 0%,
+    rgba(v.$navy, ($opacity-start + $opacity-end) / 2) 45%,
+    rgba(v.$navy, $opacity-end) 100%
+  );
+}
+
+// ── Focus ring ────────────────────────────────────────────────────
+@mixin focus-ring($color: v.$green) {
+  border-color: $color;
+  box-shadow: 0 0 0 3px rgba($color, 0.10);
+}
+
+// ── Button variant ────────────────────────────────────────────────
+@mixin btn-variant($bg, $color, $bg-hover, $border: $bg, $border-hover: $bg-hover) {
+  background: $bg;
+  color: $color;
+  border-color: $border;
+
+  &:hover {
+    background: $bg-hover;
+    border-color: $border-hover;
+    color: $color;
+  }
+}
+
+// ── Section padding ───────────────────────────────────────────────
+@mixin section($size: lg) {
+  @if    $size == xl { padding: 96px 0; }
+  @else if $size == lg { padding: 80px 0; }
+  @else if $size == md { padding: 64px 0; }
+  @else if $size == sm { padding: 48px 0; }
+}
+
+// ── Grid auto ─────────────────────────────────────────────────────
+@mixin auto-grid($min: 280px, $gap: 24px) {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($min, 1fr));
+  gap: $gap;
+}
+
+// ── Truncate text ─────────────────────────────────────────────────
+@mixin truncate($lines: 1) {
+  @if $lines == 1 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  } @else {
+    display: -webkit-box;
+    -webkit-line-clamp: $lines;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}

@@ -1,0 +1,13 @@
+// ================================================================
+// home.scss — Homepage layouts entry point
+//
+// Only needed by index.html, home-v2.html, home-v3.html.
+// Imports the home page partial which is also included in style.scss,
+// but compiled separately here so inner pages don't load it.
+//
+// Compile with:
+//   sass scss/home.scss css/home.css --style=compressed
+// ================================================================
+
+@use 'abstracts' as a;
+@use 'pages/home';

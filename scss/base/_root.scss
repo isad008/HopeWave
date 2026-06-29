@@ -1,0 +1,51 @@
+// ================================================================
+// base/_root.scss — CSS Custom Properties
+// Emits :root vars so HTML/JS can reference them at runtime.
+// ================================================================
+
+@use '../abstracts' as a;
+
+:root {
+  // Brand
+  --green:        #{a.$green};
+  --green-dark:   #{a.$green-dark};
+  --green-mid:    #{a.$green-mid};
+  --green-pale:   #{a.$green-pale};
+  --teal:         #{a.$teal};
+  --teal-dark:    #{a.$teal-dark};
+  --red:          #{a.$red};
+  --red-dark:     #{a.$red-dark};
+  --gold:         #{a.$gold};
+  --gold-dark:    #{a.$gold-dark};
+  --navy:         #{a.$navy};
+  --navy-light:   #{a.$navy-light};
+  --white:        #{a.$white};
+
+  // Neutrals
+  --gray-bg:      #{a.$gray-bg};
+  --gray-light:   #{a.$gray-light};
+  --text:         #{a.$text};
+  --text-2:       #{a.$text-2};
+  --text-3:       #{a.$text-3};
+
+  // On-dark
+  --od80:         #{a.$od80};
+  --od55:         #{a.$od55};
+  --od30:         #{a.$od30};
+  --border-d:     #{a.$border-d};
+
+  // Radii
+  --r-xs:         #{a.$r-xs};
+  --r-sm:         #{a.$r-sm};
+  --r-md:         #{a.$r-md};
+
+  // Shadows
+  --shadow-sm:    #{a.$shadow-sm};
+  --shadow-md:    #{a.$shadow-md};
+  --shadow-lg:    #{a.$shadow-lg};
+
+  // Motion
+  --ease:         #{a.$ease};
+  --tr:           #{a.$tr};
+  --tr-slow:      #{a.$tr-slow};
+}

@@ -1,0 +1,41 @@
+// ================================================================
+// style.scss — HopeWave v3 Master Entry Point
+//
+// Architecture (7-1 pattern):
+//   abstracts/   — Variables, functions, mixins (no output)
+//   base/        — Reset, root custom properties, typography
+//   layout/      — Container, grid, navbar, footer
+//   components/  — Buttons, cards, forms, section components
+//   pages/       — Page-specific styles (home variants)
+//   utilities/   — Atomic helpers, animations, spacing
+//
+// Compile with:
+//   sass scss/style.scss css/style.css --style=compressed
+//   sass scss/style.scss css/style.css --watch
+// ================================================================
+
+// ── 1. Abstracts (no CSS output — vars, functions, mixins) ────────
+@use 'abstracts' as a;
+
+// ── 2. Base ───────────────────────────────────────────────────────
+@use 'base/root';        // :root CSS custom properties
+@use 'base/reset';       // Box model reset + Google Fonts import
+@use 'base/typography';  // Headings, display scale, section labels
+
+// ── 3. Layout ─────────────────────────────────────────────────────
+@use 'layout/layout';    // Container, grids, spacing, backgrounds
+@use 'layout/navbar';    // Fixed nav, mobile panel, dropdown
+@use 'layout/footer';    // Footer grid, socials, color bar
+
+// ── 4. Components ─────────────────────────────────────────────────
+@use 'components/buttons';   // .btn and all variants
+@use 'components/cards';     // Cause, team, blog, event, testimonial…
+@use 'components/forms';     // Inputs, amount selector, auth pages
+@use 'components/sections';  // Stats, counter, hero, FAQ, gallery,
+                              // newsletter, CTA, pagination, 404…
+
+// ── 5. Pages ──────────────────────────────────────────────────────
+@use 'pages/home';       // Index hero, v2 magazine, v3 editorial
+
+// ── 6. Utilities ──────────────────────────────────────────────────
+@use 'utilities/utilities'; // Colors, spacing, reveal, event variants

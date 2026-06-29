@@ -1,850 +1,258 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="HopeWave - Nonprofit Charity & Donation Template. Empower change through compassionate giving." />
-  <title>HopeWave — Nonprofit Charity Donation Template</title>
-
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-
-  <!-- Bootstrap 5 -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-
-  <!-- Bootstrap Icons -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
-
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="css/style.css" />
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta name="description" content="HopeWave nonprofit charity template. Clean water, education, healthcare — 98% of every dollar reaches programs."/>
+<title>HopeWave — Nonprofit Charity Template</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"/>
+<link rel="stylesheet" href="css/style.css"/>
+<link rel="stylesheet" href="css/home.css"/>
 </head>
 <body>
+<div id="nav-inject"></div>
 
-<!-- Preloader -->
-<div class="preloader">
-  <div class="preloader-logo">Hope<span>Wave</span></div>
-  <div class="preloader-bar"><div class="preloader-fill"></div></div>
+<div class="top-bar" role="banner">
+  <strong>Emergency Appeal:</strong> Flood relief for Southeast Asia —
+  <a href="pages/donate.html">Help 8,000 displaced families now</a>
 </div>
 
-<!-- ========================
-     NAVBAR
-======================== -->
-<nav class="navbar navbar-expand-lg navbar-hopewave fixed-top">
-  <div class="container">
-    <a class="navbar-brand" href="index.html">
-      <div class="brand-icon">
-        <i class="bi bi-heart-fill text-white" style="font-size:16px;"></i>
+<!-- HERO -->
+<section class="hero-section idx-hero" aria-label="Hero">
+  <div class="hero-bg-img"><img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1800&q=85" alt="" aria-hidden="true"/></div>
+  <div class="hero-overlay hero-overlay-dark"></div>
+  <div class="idx-hero-content">
+    <div class="idx-hero-inner">
+      <div class="hero-eyebrow"><i class="bi bi-globe-americas"></i> Making Impact Since 2010</div>
+      <h1 class="display-xl hero-title">Give Hope.<br><span class="hero-accent">Change Lives.</span></h1>
+      <p class="hero-desc">Join 40,000+ changemakers funding clean water, education, and healthcare in 48 countries — with radical transparency on every dollar donated.</p>
+      <div class="hero-ctas">
+        <a href="pages/donate.html" class="btn btn-red btn-lg"><i class="bi bi-heart-fill"></i> Donate Now</a>
+        <a href="pages/causes.html" class="btn btn-outline-white btn-lg">Explore Causes <i class="bi bi-arrow-right"></i></a>
       </div>
-      Hope<span>Wave</span>
-    </a>
-
-    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMain">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navMain">
-      <ul class="navbar-nav mx-auto gap-1">
-        <li class="nav-item dropdown">
-          <a class="nav-link active dropdown-toggle" href="index.html" data-bs-toggle="dropdown">Home</a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item active" href="index.html">Home — Classic</a></li>
-            <li><a class="dropdown-item" href="pages/home-v2.html">Home — Bold Dark</a></li>
-            <li><a class="dropdown-item" href="pages/home-v3.html">Home — Nature Green</a></li>
-          </ul>
-        </li>
-        <li class="nav-item"><a class="nav-link" href="pages/about.html">About</a></li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Causes</a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="pages/causes.html">All Causes</a></li>
-            <li><a class="dropdown-item" href="pages/cause-detail.html">Cause Detail</a></li>
-          </ul>
-        </li>
-        <li class="nav-item"><a class="nav-link" href="pages/events.html">Events</a></li>
-        <li class="nav-item"><a class="nav-link" href="pages/volunteer.html">Volunteer</a></li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Pages</a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="pages/team.html">Our Team</a></li>
-            <li><a class="dropdown-item" href="pages/gallery.html">Gallery</a></li>
-            <li><a class="dropdown-item" href="pages/blog.html">Blog</a></li>
-            <li><a class="dropdown-item" href="pages/blog-detail.html">Blog Detail</a></li>
-            <li><a class="dropdown-item" href="pages/faq.html">FAQ</a></li>
-          </ul>
-        </li>
-        <li class="nav-item"><a class="nav-link" href="pages/contact.html">Contact</a></li>
-      </ul>
-      <div class="d-flex align-items-center gap-2">
-        <a href="pages/login.html" class="nav-link" style="font-weight:600;font-size:15px;color:var(--secondary) !important;">Sign In</a>
-        <a href="pages/donate.html" class="nav-link navbar-donate-btn">
-          <i class="bi bi-heart-fill me-1"></i> Donate Now
-        </a>
+      <div class="hero-trust">
+        <div class="hero-trust-item"><i class="bi bi-shield-fill-check trust-icon-teal"></i> 98% to Programs</div>
+        <div class="hero-trust-div" aria-hidden="true"></div>
+        <div class="hero-trust-item"><i class="bi bi-star-fill trust-icon-gold"></i> Charity Navigator &#9733;&#9733;&#9733;&#9733;</div>
+        <div class="hero-trust-div" aria-hidden="true"></div>
+        <div class="hero-trust-item"><i class="bi bi-lock-fill trust-icon-teal"></i> SSL Secure &amp; Tax Deductible</div>
       </div>
     </div>
   </div>
-</nav>
-
-<!-- ========================
-     HERO SECTION
-======================== -->
-<section class="hero-section">
-  <div class="hero-bg-pattern"></div>
-  <div class="container position-relative" style="z-index:2;">
-    <div class="row align-items-center gy-5">
-
-      <!-- Left: Content -->
-      <div class="col-lg-6">
-        <div class="hero-content">
-          <div class="hero-eyebrow">
-            <i class="bi bi-hand-thumbs-up-fill"></i>
-            Making a Difference Since 2010
-          </div>
-          <h1 class="hero-title">
-            Together We Build a <em>Better World</em> for All
-          </h1>
-          <p class="hero-desc">
-            Every act of kindness creates a ripple. Join 40,000+ compassionate donors helping communities thrive — one life-changing gift at a time.
-          </p>
-          <div class="d-flex flex-wrap gap-3">
-            <a href="pages/donate.html" class="btn-primary-custom">
-              <i class="bi bi-heart-fill"></i> Donate Now
-            </a>
-            <a href="pages/causes.html" class="btn-white-outline">
-              Explore Causes <i class="bi bi-arrow-right"></i>
-            </a>
-          </div>
-
-          <!-- Quick Donate Widget -->
-          <div class="donation-quick-card">
-            <h6>Quick Donation</h6>
-            <div class="amount-btns">
-              <button class="amount-btn active">$10</button>
-              <button class="amount-btn">$25</button>
-              <button class="amount-btn">$50</button>
-              <button class="amount-btn">$100</button>
-            </div>
-            <button class="donate-now-btn">
-              <i class="bi bi-shield-check me-2"></i> Secure Donate
-            </button>
-          </div>
-
-          <!-- Stats -->
-          <div class="hero-stats">
-            <div>
-              <span class="hero-stat-num" data-counter data-target="12400" data-suffix="+">12400+</span>
-              <span class="hero-stat-label">Lives Impacted</span>
-            </div>
-            <div>
-              <span class="hero-stat-num" data-counter data-target="850" data-suffix="+">850+</span>
-              <span class="hero-stat-label">Projects Done</span>
-            </div>
-            <div>
-              <span class="hero-stat-num" data-counter data-target="98" data-suffix="%">98%</span>
-              <span class="hero-stat-label">Funds to Causes</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Right: Image -->
-      <div class="col-lg-6">
-        <div class="hero-img-block">
-          <img
-            src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=700&q=80"
-            alt="Volunteers helping community"
-            class="hero-img-main"
-          />
-          <img
-            src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?w=300&q=80"
-            alt="Children being helped"
-            class="hero-img-overlay"
-          />
-          <div class="hero-badge">
-            <span class="big-num">40K</span>
-            <span class="label">Happy Donors</span>
-          </div>
-        </div>
-      </div>
-
+  <div class="quick-donate" aria-label="Quick donation">
+    <div class="qd-title">Quick Donate</div>
+    <div class="qd-amounts">
+      <div class="qd-amt sel" data-amount="25">$25</div>
+      <div class="qd-amt" data-amount="50">$50</div>
+      <div class="qd-amt" data-amount="100">$100</div>
     </div>
+    <input type="number" class="qd-input" placeholder="Other amount ($)" aria-label="Custom donation amount"/>
+    <a href="pages/donate.html" class="qd-btn"><i class="bi bi-lock-fill"></i> Give Securely</a>
+    <p class="qd-note"><i class="bi bi-shield-check"></i> 256-bit SSL &middot; PCI Compliant &middot; Instant Receipt</p>
   </div>
 </section>
 
-<!-- ========================
-     IMPACT NUMBERS STRIP
-======================== -->
-<div class="impact-strip">
+<!-- STATS STRIP -->
+<div class="stats-strip" role="region" aria-label="Key statistics">
+  <div class="stats-cells">
+    <div class="stat-cell reveal"><span class="stat-num text-teal-color" data-count="15" data-suffix="M+">15M+</span><span class="stat-lbl">Total Raised</span></div>
+    <div class="stat-cell reveal"><span class="stat-num text-white" data-count="12400" data-suffix="+">12,400+</span><span class="stat-lbl">Lives Changed</span></div>
+    <div class="stat-cell reveal"><span class="stat-num text-teal-color" data-count="48">48</span><span class="stat-lbl">Countries</span></div>
+    <div class="stat-cell reveal"><span class="stat-num text-gold" data-count="1200" data-suffix="+">1,200+</span><span class="stat-lbl">Volunteers</span></div>
+    <div class="stat-cell reveal"><span class="stat-num text-green" data-count="98" data-suffix="%">98%</span><span class="stat-lbl">Funds to Programs</span></div>
+  </div>
+</div>
+
+<!-- APPEAL STRIP -->
+<div class="appeal-strip">
   <div class="container">
-    <div class="row gy-4">
-      <div class="col-6 col-md-3">
-        <div class="impact-item">
-          <span class="impact-num" data-counter data-target="15" data-suffix="M+">15M+</span>
-          <span class="impact-label">Total Raised</span>
-        </div>
-      </div>
-      <div class="col-6 col-md-3">
-        <div class="impact-item">
-          <span class="impact-num" data-counter data-target="1200" data-suffix="+">1200+</span>
-          <span class="impact-label">Active Volunteers</span>
-        </div>
-      </div>
-      <div class="col-6 col-md-3">
-        <div class="impact-item">
-          <span class="impact-num" data-counter data-target="48" data-suffix="+">48+</span>
-          <span class="impact-label">Countries Reached</span>
-        </div>
-      </div>
-      <div class="col-6 col-md-3">
-        <div class="impact-item">
-          <span class="impact-num" data-counter data-target="320" data-suffix="+">320+</span>
-          <span class="impact-label">Active Campaigns</span>
-        </div>
-      </div>
+    <div class="appeal-pills">
+      <span class="appeal-label">Current Appeals:</span>
+      <a href="pages/cause-detail.html" class="appeal-pill">Water &middot; Kenya</a>
+      <a href="pages/cause-detail.html" class="appeal-pill">Schools &middot; Nepal</a>
+      <a href="pages/cause-detail.html" class="appeal-pill">Clinics &middot; Bangladesh</a>
+      <a href="pages/cause-detail.html" class="appeal-pill">Food Relief &middot; Africa</a>
+      <a href="pages/cause-detail.html" class="appeal-pill">Amazon Reforestation</a>
+      <a href="pages/cause-detail.html" class="appeal-pill urgent">&#128680; Flood Relief</a>
     </div>
   </div>
 </div>
 
-<!-- ========================
-     ABOUT SECTION
-======================== -->
-<section class="section-pad bg-light-custom">
+<!-- FEATURED CAUSES -->
+<section class="section-lg bg-gray">
   <div class="container">
-    <div class="row align-items-center gy-5">
-
-      <!-- Image -->
-      <div class="col-lg-5">
-        <div class="about-img-wrap fade-up">
-          <img
-            src="https://images.unsplash.com/photo-1593113598332-cd288d649433?w=600&q=80"
-            alt="Our mission"
-            class="about-img-main"
-          />
-          <img
-            src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=300&q=80"
-            alt="Team working"
-            class="about-img-secondary"
-          />
-          <div class="experience-badge">
-            <span class="exp-num">14</span>
-            <span class="exp-label">Years of<br/>Impact</span>
-          </div>
-        </div>
+    <div class="flex-between mb-48 reveal">
+      <div>
+        <div class="section-label"><span class="line"></span><span class="text">Active Campaigns</span></div>
+        <h2 class="display-md">Causes That Need Your Support</h2>
+        <p class="text-muted mt-8">Every campaign independently vetted, real-time tracked, and field-verified.</p>
       </div>
-
-      <!-- Content -->
-      <div class="col-lg-6 offset-lg-1">
-        <div class="fade-up">
-          <div class="section-label">Our Mission</div>
-          <h2 class="section-title">Empowering Communities Through Compassionate Action</h2>
-          <p class="section-desc mb-4">
-            HopeWave is a registered nonprofit dedicated to creating lasting change in underserved communities worldwide. We believe every person deserves dignity, health, and opportunity.
-          </p>
-
-          <div class="about-feature">
-            <div class="about-feature-icon"><i class="bi bi-droplet-fill"></i></div>
-            <div>
-              <h6>Clean Water Access</h6>
-              <p>Providing safe drinking water to remote villages across three continents.</p>
-            </div>
-          </div>
-          <div class="about-feature">
-            <div class="about-feature-icon"><i class="bi bi-book-fill"></i></div>
-            <div>
-              <h6>Education for All</h6>
-              <p>Building schools and funding scholarships for children in need.</p>
-            </div>
-          </div>
-          <div class="about-feature">
-            <div class="about-feature-icon"><i class="bi bi-heart-pulse-fill"></i></div>
-            <div>
-              <h6>Healthcare Outreach</h6>
-              <p>Mobile clinics and medical missions reaching thousands every month.</p>
-            </div>
-          </div>
-
-          <a href="pages/about.html" class="btn-outline-custom mt-2">
-            Learn Our Story <i class="bi bi-arrow-right"></i>
-          </a>
+      <a href="pages/causes.html" class="btn btn-outline-green">View All Causes <i class="bi bi-arrow-right"></i></a>
+    </div>
+    <div class="grid-3">
+      <article class="cause-card reveal">
+        <div class="cause-img"><img src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?w=600&q=80" alt="Water point Kenya"/><span class="cause-tag tag-water">Water</span></div>
+        <div class="cause-body">
+          <h3 class="cause-title">Clean Water for Rural Kenya Villages</h3>
+          <p class="cause-desc">Solar-powered boreholes delivering safe water to 12 villages — eliminating 6-hour daily walks and a 94% reduction in waterborne illness for 30,000 people.</p>
+          <div class="prow"><span class="raised">$48,200 raised</span><span>of $60,000 &middot; 80%</span></div>
+          <div class="bar-track"><div class="bar-fill" data-w="80" role="progressbar" aria-valuenow="80" aria-label="80% funded"></div></div>
+          <div class="cause-foot"><div class="cause-meta"><span><i class="bi bi-people-fill"></i>1,240 donors</span><span><i class="bi bi-clock"></i>12 days left</span></div><a href="pages/donate.html" class="cause-btn">Donate</a></div>
         </div>
+      </article>
+      <article class="cause-card reveal reveal-delay-1">
+        <div class="cause-img"><img src="https://images.unsplash.com/photo-1497375638960-ca368c7231b4?w=600&q=80" alt="Nepal school"/><span class="cause-tag tag-edu">Education</span></div>
+        <div class="cause-body">
+          <h3 class="cause-title">School Rebuilding Project in Nepal</h3>
+          <p class="cause-desc">Three earthquake-damaged schools rebuilt to modern standards, returning 800 children to safe learning — 250 of them girls at risk of permanent dropout.</p>
+          <div class="prow"><span class="raised">$32,500 raised</span><span>of $75,000 &middot; 43%</span></div>
+          <div class="bar-track"><div class="bar-fill" data-w="43" role="progressbar" aria-valuenow="43" aria-label="43% funded"></div></div>
+          <div class="cause-foot"><div class="cause-meta"><span><i class="bi bi-people-fill"></i>874 donors</span><span><i class="bi bi-clock"></i>30 days left</span></div><a href="pages/donate.html" class="cause-btn">Donate</a></div>
+        </div>
+      </article>
+      <article class="cause-card reveal reveal-delay-2">
+        <div class="cause-img"><img src="https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?w=600&q=80" alt="Mobile clinic Bangladesh"/><span class="cause-tag tag-health">Healthcare</span></div>
+        <div class="cause-body">
+          <h3 class="cause-title">Mobile Clinic Expansion &mdash; Bangladesh</h3>
+          <p class="cause-desc">Two new solar-powered mobile units delivering essential care to coastal communities with no other healthcare access — 5,000+ patients treated every quarter.</p>
+          <div class="prow"><span class="raised">$91,000 raised</span><span>of $100,000 &middot; 91%</span></div>
+          <div class="bar-track"><div class="bar-fill" data-w="91" role="progressbar" aria-valuenow="91" aria-label="91% funded"></div></div>
+          <div class="cause-foot"><div class="cause-meta"><span><i class="bi bi-people-fill"></i>3,210 donors</span><span><i class="bi bi-clock"></i>5 days left</span></div><a href="pages/donate.html" class="cause-btn">Donate</a></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- EMERGENCY BAR -->
+<div class="emergency-bar">
+  <div class="container">
+    <div class="emergency-inner">
+      <div class="emergency-left">
+        <i class="bi bi-lightning-charge-fill emergency-icon"></i>
+        <div><div class="emergency-title">Emergency &mdash; Flood Relief Southeast Asia</div><div class="emergency-sub">8,000 families displaced &middot; 93% funded &middot; 3 days remaining</div></div>
+      </div>
+      <a href="pages/donate.html" class="btn btn-red"><i class="bi bi-heart-fill"></i> Give Now</a>
+    </div>
+  </div>
+</div>
+
+<!-- HOW IT WORKS -->
+<section class="section-lg">
+  <div class="container">
+    <div class="text-center mb-48 reveal">
+      <div class="section-label section-label-center"><span class="line"></span><span class="text">Simple Process</span><span class="line"></span></div>
+      <h2 class="display-md">Three Steps to Real, Lasting Change</h2>
+      <p class="text-muted mt-8">Simple, transparent, and deeply meaningful — from choosing a cause to watching your impact unfold.</p>
+    </div>
+    <div class="grid-3">
+      <div class="how-step reveal"><span class="how-step-num">01</span><div class="how-step-icon"><i class="bi bi-search-heart"></i></div><h4>Choose Your Cause</h4><p>Browse 42 vetted campaigns across water, education, healthcare, food, environment, and disaster relief — transparent goals, real field data.</p></div>
+      <div class="how-step reveal reveal-delay-1"><span class="how-step-num">02</span><div class="how-step-icon how-step-icon-red"><i class="bi bi-credit-card-fill"></i></div><h4>Give Securely</h4><p>One-time or monthly — any amount makes a difference. 256-bit SSL, instant tax receipt, PCI DSS compliant. Every dollar tracked from arrival.</p></div>
+      <div class="how-step reveal reveal-delay-2"><span class="how-step-num">03</span><div class="how-step-icon how-step-icon-teal"><i class="bi bi-bar-chart-fill"></i></div><h4>See Your Impact</h4><p>Real-time dashboards, photo reports, and a personalised impact update within 90 days — so you always know exactly what your generosity achieved.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT SPLIT -->
+<section class="section-lg bg-navy">
+  <div class="container">
+    <div class="grid-half">
+      <div class="reveal about-img-wrap">
+        <img src="https://images.unsplash.com/photo-1593113598332-cd288d649433?w=700&q=85" alt="HopeWave volunteers with community" class="about-img"/>
+        <div class="about-badge about-badge-years"><div class="num" data-count="14">14</div><div class="lbl">Years of<br>Impact</div></div>
+        <div class="about-badge about-badge-pct"><div class="num">98%</div><div class="lbl">To Programs</div></div>
+      </div>
+      <div class="reveal reveal-delay-2">
+        <div class="section-label"><span class="line line-teal"></span><span class="text text-teal">Our Mission</span></div>
+        <h2 class="display-md text-white">Radical Transparency.<br>Relentless Impact.</h2>
+        <p class="about-desc mt-16">HopeWave was founded on a simple belief: people give more when they know exactly where their money goes. 98 cents of every dollar reaches programs — every donor receives real evidence of their impact.</p>
+        <p class="about-desc mt-8 mb-24">We don't just deliver aid — we build lasting community-owned systems: water infrastructure, schools, health networks, and livelihoods that generate impact long after our teams move on.</p>
+        <div class="about-features">
+          <div class="about-feature"><div class="about-feature-icon feat-teal"><i class="bi bi-droplet-fill"></i></div><div><div class="about-feature-title">Clean Water</div><p class="about-feature-desc">30,000 people served &middot; 12 villages &middot; 94% illness reduction in Kenya</p></div></div>
+          <div class="about-feature"><div class="about-feature-icon feat-gold"><i class="bi bi-book-fill"></i></div><div><div class="about-feature-title">Education</div><p class="about-feature-desc">800 children in school &middot; 250 girls retained &middot; 3 schools rebuilt in Nepal</p></div></div>
+          <div class="about-feature"><div class="about-feature-icon feat-red"><i class="bi bi-heart-pulse-fill"></i></div><div><div class="about-feature-title">Healthcare</div><p class="about-feature-desc">5,000+ patients/quarter &middot; 2 mobile clinics &middot; Bangladesh coastal communities</p></div></div>
+        </div>
+        <a href="pages/about.html" class="btn btn-teal mt-32">Learn Our Story <i class="bi bi-arrow-right"></i></a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ========================
-     FEATURED CAUSES
-======================== -->
-<section class="section-pad">
+<!-- COUNTER STRIP -->
+<div class="counter-strip">
+  <div class="counter-cells">
+    <div class="counter-cell reveal"><span class="counter-num text-white" data-count="15" data-suffix="M+">15M+</span><span class="counter-lbl">Total Raised</span></div>
+    <div class="counter-cell reveal reveal-delay-1"><span class="counter-num text-gold" data-count="12400" data-suffix="+">12,400+</span><span class="counter-lbl">Lives Changed</span></div>
+    <div class="counter-cell reveal reveal-delay-2"><span class="counter-num text-teal-color" data-count="48">48</span><span class="counter-lbl">Countries</span></div>
+    <div class="counter-cell reveal reveal-delay-3"><span class="counter-num text-white" data-count="40000" data-suffix="+">40K+</span><span class="counter-lbl">Donors Worldwide</span></div>
+  </div>
+</div>
+
+<!-- TESTIMONIALS -->
+<section class="section-lg bg-gray">
   <div class="container">
-    <div class="row justify-content-between align-items-end mb-5">
-      <div class="col-lg-6 fade-up">
-        <div class="section-label">Active Causes</div>
-        <h2 class="section-title">Causes That Need Your Support</h2>
-      </div>
-      <div class="col-lg-4 text-lg-end fade-up">
-        <a href="pages/causes.html" class="btn-outline-custom">
-          View All Causes <i class="bi bi-arrow-right"></i>
-        </a>
-      </div>
+    <div class="text-center mb-48 reveal">
+      <div class="section-label section-label-center"><span class="line"></span><span class="text">Donor Stories</span><span class="line"></span></div>
+      <h2 class="display-md">Words From Our Community</h2>
     </div>
-
-    <div class="row gy-4">
-      <!-- Cause 1 -->
-      <div class="col-lg-4 col-md-6 fade-up">
-        <div class="cause-card">
-          <img src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?w=500&q=80" alt="Clean Water" class="cause-card-img" />
-          <div class="cause-card-body">
-            <span class="cause-card-badge">Water</span>
-            <h3 class="cause-card-title">Clean Water for Rural Kenya Villages</h3>
-            <p class="cause-card-desc">Help us install solar-powered water purification systems for 12 villages lacking access to safe drinking water.</p>
-            <div class="cause-progress-label">
-              <span class="raised">$48,200 Raised</span>
-              <span class="goal">Goal: $60,000</span>
-            </div>
-            <div class="progress-bar-custom">
-              <div class="progress-fill" data-width="80"></div>
-            </div>
-            <div class="cause-card-footer">
-              <div class="cause-meta">
-                <div class="cause-meta-item"><i class="bi bi-people-fill"></i> 1,240 Donors</div>
-                <div class="cause-meta-item"><i class="bi bi-calendar3"></i> 12 Days Left</div>
-              </div>
-              <a href="pages/donate.html" class="cause-donate-btn">Donate</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Cause 2 -->
-      <div class="col-lg-4 col-md-6 fade-up">
-        <div class="cause-card">
-          <img src="https://images.unsplash.com/photo-1497375638960-ca368c7231b4?w=500&q=80" alt="Education" class="cause-card-img" />
-          <div class="cause-card-body">
-            <span class="cause-card-badge">Education</span>
-            <h3 class="cause-card-title">School Rebuilding Project in Nepal</h3>
-            <p class="cause-card-desc">Rebuilding three earthquake-damaged primary schools so 800 children can return to safe, quality education.</p>
-            <div class="cause-progress-label">
-              <span class="raised">$32,500 Raised</span>
-              <span class="goal">Goal: $75,000</span>
-            </div>
-            <div class="progress-bar-custom">
-              <div class="progress-fill" data-width="43"></div>
-            </div>
-            <div class="cause-card-footer">
-              <div class="cause-meta">
-                <div class="cause-meta-item"><i class="bi bi-people-fill"></i> 874 Donors</div>
-                <div class="cause-meta-item"><i class="bi bi-calendar3"></i> 30 Days Left</div>
-              </div>
-              <a href="pages/donate.html" class="cause-donate-btn">Donate</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Cause 3 -->
-      <div class="col-lg-4 col-md-6 fade-up">
-        <div class="cause-card">
-          <img src="https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?w=500&q=80" alt="Healthcare" class="cause-card-img" />
-          <div class="cause-card-body">
-            <span class="cause-card-badge">Healthcare</span>
-            <h3 class="cause-card-title">Mobile Clinic Expansion in Bangladesh</h3>
-            <p class="cause-card-desc">Fund two new mobile medical clinics to bring essential healthcare services to remote coastal communities.</p>
-            <div class="cause-progress-label">
-              <span class="raised">$91,000 Raised</span>
-              <span class="goal">Goal: $100,000</span>
-            </div>
-            <div class="progress-bar-custom">
-              <div class="progress-fill" data-width="91"></div>
-            </div>
-            <div class="cause-card-footer">
-              <div class="cause-meta">
-                <div class="cause-meta-item"><i class="bi bi-people-fill"></i> 3,210 Donors</div>
-                <div class="cause-meta-item"><i class="bi bi-calendar3"></i> 5 Days Left</div>
-              </div>
-              <a href="pages/donate.html" class="cause-donate-btn">Donate</a>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div class="grid-3">
+      <div class="t-card reveal"><div class="t-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="t-text">"HopeWave is the most transparent charity I've ever supported. I can watch my donation become a water pump in Kenya. That accountability is extraordinary."</p><div class="t-author"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80" alt="Sarah Mitchell" class="t-avatar"/><div><span class="t-name">Sarah Mitchell</span><span class="t-loc">Monthly Donor &middot; New York, USA</span></div></div></div>
+      <div class="t-card reveal reveal-delay-1"><div class="t-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="t-text">"I started with $10 a month three years ago. The impact reports make me feel part of something bigger. I've tripled my giving and never doubted the decision."</p><div class="t-author"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80" alt="David Chen" class="t-avatar"/><div><span class="t-name">David Chen</span><span class="t-loc">Monthly Donor &middot; San Francisco, USA</span></div></div></div>
+      <div class="t-card reveal reveal-delay-2"><div class="t-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="t-text">"As a corporate partner, HopeWave made our employee giving programme seamless and meaningful. The stories we share in all-hands are genuinely moving."</p><div class="t-author"><img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80" alt="Emma Rodriguez" class="t-avatar"/><div><span class="t-name">Emma Rodriguez</span><span class="t-loc">Corporate Partner &middot; London, UK</span></div></div></div>
     </div>
   </div>
 </section>
 
-<!-- ========================
-     HOW IT WORKS
-======================== -->
-<section class="section-pad bg-light-custom">
+<!-- GET INVOLVED -->
+<section class="section-md">
   <div class="container">
-    <div class="text-center mb-5 fade-up">
-      <div class="section-label" style="justify-content:center;">How It Works</div>
-      <h2 class="section-title">Change a Life in Three Simple Steps</h2>
+    <div class="text-center mb-40 reveal">
+      <div class="section-label section-label-center"><span class="line"></span><span class="text">Ways to Help</span><span class="line"></span></div>
+      <h2 class="display-md">Get Involved</h2>
     </div>
-    <div class="row gy-4 text-center">
-      <div class="col-md-4 fade-up">
-        <div class="how-step">
-          <span class="step-num">01</span>
-          <div class="step-icon-wrap"><i class="bi bi-search-heart"></i></div>
-          <h5>Choose Your Cause</h5>
-          <p>Browse through our vetted campaigns and find a cause that resonates with your values and passion.</p>
-        </div>
-      </div>
-      <div class="col-md-4 fade-up">
-        <div class="how-step">
-          <span class="step-num">02</span>
-          <div class="step-icon-wrap"><i class="bi bi-credit-card-fill"></i></div>
-          <h5>Make Your Donation</h5>
-          <p>Securely donate any amount — one-time or monthly. Every dollar goes directly to those in need.</p>
-        </div>
-      </div>
-      <div class="col-md-4 fade-up">
-        <div class="how-step">
-          <span class="step-num">03</span>
-          <div class="step-icon-wrap"><i class="bi bi-bar-chart-fill"></i></div>
-          <h5>Track the Impact</h5>
-          <p>Receive real-time updates, photos, and reports showing exactly how your generosity is changing lives.</p>
-        </div>
-      </div>
+    <div class="grid-6">
+      <a href="pages/events.html" class="involve-item reveal"><i class="bi bi-calendar-event-fill"></i><span>Events</span></a>
+      <a href="pages/volunteer.html" class="involve-item reveal reveal-delay-1"><i class="bi bi-people-fill"></i><span>Volunteer</span></a>
+      <a href="pages/blog.html" class="involve-item reveal reveal-delay-2"><i class="bi bi-newspaper"></i><span>Stories</span></a>
+      <a href="pages/impact.html" class="involve-item reveal reveal-delay-1"><i class="bi bi-bar-chart-fill"></i><span>Reports</span></a>
+      <a href="pages/partners.html" class="involve-item reveal reveal-delay-2"><i class="bi bi-building-fill"></i><span>Partners</span></a>
+      <a href="pages/faq.html" class="involve-item reveal reveal-delay-3"><i class="bi bi-question-circle-fill"></i><span>FAQ</span></a>
     </div>
   </div>
 </section>
 
-<!-- ========================
-     TESTIMONIALS
-======================== -->
-<section class="section-pad testimonial-section">
+<!-- PARTNERS -->
+<section class="section-sm bg-gray">
   <div class="container">
-    <div class="text-center mb-5 fade-up">
-      <div class="section-label" style="justify-content:center; color:var(--primary-light);">
-        <span style="background:var(--primary);"></span>Donor Stories
-      </div>
-      <h2 class="section-title" style="color:#fff;">Words from Our Generous Community</h2>
-    </div>
-
-    <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <div class="row justify-content-center gy-4">
-            <div class="col-lg-4 col-md-6">
-              <div class="testimonial-card">
-                <div class="testimonial-stars">★★★★★</div>
-                <div class="testimonial-quote">"</div>
-                <p class="testimonial-text">Donating through HopeWave changed my perspective on giving. I can see exactly where my money goes and the updates are heartwarming.</p>
-                <div class="testimonial-author">
-                  <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80" alt="Sarah" class="testimonial-avatar" />
-                  <div>
-                    <div class="testimonial-name">Sarah Mitchell</div>
-                    <div class="testimonial-loc">New York, USA</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-              <div class="testimonial-card">
-                <div class="testimonial-stars">★★★★★</div>
-                <div class="testimonial-quote">"</div>
-                <p class="testimonial-text">I've supported three causes this year. The transparency and the impact reports make it easy to give with confidence month after month.</p>
-                <div class="testimonial-author">
-                  <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80" alt="David" class="testimonial-avatar" />
-                  <div>
-                    <div class="testimonial-name">David Chen</div>
-                    <div class="testimonial-loc">San Francisco, USA</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6 d-none d-lg-block">
-              <div class="testimonial-card">
-                <div class="testimonial-stars">★★★★★</div>
-                <div class="testimonial-quote">"</div>
-                <p class="testimonial-text">As a corporate partner, HopeWave made it seamless to run our employee giving program. The impact is real, measurable and inspiring.</p>
-                <div class="testimonial-author">
-                  <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80" alt="Emma" class="testimonial-avatar" />
-                  <div>
-                    <div class="testimonial-name">Emma Rodriguez</div>
-                    <div class="testimonial-loc">London, UK</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- More slides can be added -->
-      </div>
-      <div class="text-center mt-4">
-        <button class="btn-white-outline me-2 py-2 px-4" style="font-size:14px;" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
-          <i class="bi bi-arrow-left"></i>
-        </button>
-        <button class="btn-white-outline py-2 px-4" style="font-size:14px;" data-bs-target="#testimonialCarousel" data-bs-slide="next">
-          <i class="bi bi-arrow-right"></i>
-        </button>
-      </div>
+    <p class="partners-label">Trusted by Our Global Partners</p>
+    <div class="partners-logos">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/272px-Google_2015_logo.svg.png" alt="Google" class="partner-logo"/>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/320px-Amazon_logo.svg.png" alt="Amazon" class="partner-logo"/>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/320px-Netflix_2015_logo.svg.png" alt="Netflix" class="partner-logo"/>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/60px-LinkedIn_logo_initials.png" alt="LinkedIn" class="partner-logo partner-logo-sm"/>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Spotify_logo_without_text.svg/80px-Spotify_logo_without_text.svg.png" alt="Spotify" class="partner-logo partner-logo-sm"/>
     </div>
   </div>
 </section>
 
-<!-- ========================
-     UPCOMING EVENTS
-======================== -->
-<section class="section-pad">
-  <div class="container">
-    <div class="row justify-content-between align-items-end mb-5">
-      <div class="col-lg-6 fade-up">
-        <div class="section-label">Events</div>
-        <h2 class="section-title">Upcoming Events & Campaigns</h2>
-      </div>
-      <div class="col-lg-4 text-lg-end fade-up">
-        <a href="pages/events.html" class="btn-outline-custom">All Events <i class="bi bi-arrow-right"></i></a>
-      </div>
-    </div>
-    <div class="row gy-3 fade-up">
-      <div class="col-lg-6">
-        <div class="event-card">
-          <div class="event-date-block">
-            <span class="event-day">18</span>
-            <span class="event-month">Jul</span>
-          </div>
-          <div class="event-body">
-            <div class="event-tag">Charity Run</div>
-            <div class="event-title">Annual 5K Run for Clean Water</div>
-            <div class="event-meta">
-              <span><i class="bi bi-geo-alt me-1"></i>Central Park, NY</span>
-              <span><i class="bi bi-clock me-1"></i>7:00 AM</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-6">
-        <div class="event-card">
-          <div class="event-date-block">
-            <span class="event-day">02</span>
-            <span class="event-month">Aug</span>
-          </div>
-          <div class="event-body">
-            <div class="event-tag">Gala Dinner</div>
-            <div class="event-title">HopeWave Annual Fundraising Gala</div>
-            <div class="event-meta">
-              <span><i class="bi bi-geo-alt me-1"></i>Ritz Carlton, NYC</span>
-              <span><i class="bi bi-clock me-1"></i>7:00 PM</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-6">
-        <div class="event-card">
-          <div class="event-date-block">
-            <span class="event-day">15</span>
-            <span class="event-month">Aug</span>
-          </div>
-          <div class="event-body">
-            <div class="event-tag">Workshop</div>
-            <div class="event-title">Volunteer Training Day</div>
-            <div class="event-meta">
-              <span><i class="bi bi-geo-alt me-1"></i>HopeWave HQ, Chicago</span>
-              <span><i class="bi bi-clock me-1"></i>10:00 AM</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-6">
-        <div class="event-card">
-          <div class="event-date-block">
-            <span class="event-day">22</span>
-            <span class="event-month">Sep</span>
-          </div>
-          <div class="event-body">
-            <div class="event-tag">Auction</div>
-            <div class="event-title">Art for Hope: Charity Art Auction</div>
-            <div class="event-meta">
-              <span><i class="bi bi-geo-alt me-1"></i>Online + LA Gallery</span>
-              <span><i class="bi bi-clock me-1"></i>6:00 PM</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+<!-- NEWSLETTER -->
+<section class="nl-section">
+  <div class="container nl-inner text-center reveal">
+    <div class="section-label section-label-center"><span class="line line-white-muted"></span><span class="text text-white-muted">Stay Connected</span><span class="line line-white-muted"></span></div>
+    <h2 class="display-md text-white mt-8">Join the Movement</h2>
+    <p class="nl-desc">Impact stories, campaign updates, volunteer opportunities, and event invitations — in your inbox.</p>
+    <form class="nl-form" id="newsletter-form" novalidate>
+      <input type="email" class="nl-input" placeholder="Enter your email address" required aria-label="Email address"/>
+      <button type="submit" class="nl-btn">Subscribe <i class="bi bi-arrow-right"></i></button>
+    </form>
+    <p class="nl-note">No spam &middot; Unsubscribe anytime &middot; Privacy protected</p>
   </div>
 </section>
 
-<!-- ========================
-     TEAM
-======================== -->
-<section class="section-pad bg-light-custom">
-  <div class="container">
-    <div class="text-center mb-5 fade-up">
-      <div class="section-label" style="justify-content:center;">Our People</div>
-      <h2 class="section-title">Meet the Dedicated Team</h2>
-      <p class="section-desc mx-auto">Passionate leaders committed to transparency, impact, and the communities we serve.</p>
-    </div>
-    <div class="row gy-4">
-      <div class="col-lg-3 col-sm-6 fade-up">
-        <div class="team-card">
-          <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80" alt="CEO" class="team-img" />
-          <div class="team-body">
-            <div class="team-name">James Harrison</div>
-            <div class="team-role">Founder & CEO</div>
-            <div class="team-social">
-              <a href="#"><i class="bi bi-twitter-x"></i></a>
-              <a href="#"><i class="bi bi-linkedin"></i></a>
-              <a href="#"><i class="bi bi-envelope-fill"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-sm-6 fade-up">
-        <div class="team-card">
-          <img src="https://images.unsplash.com/photo-1573496799652-408c2ac9fe98?w=400&q=80" alt="Director" class="team-img" />
-          <div class="team-body">
-            <div class="team-name">Amara Okonkwo</div>
-            <div class="team-role">Programs Director</div>
-            <div class="team-social">
-              <a href="#"><i class="bi bi-twitter-x"></i></a>
-              <a href="#"><i class="bi bi-linkedin"></i></a>
-              <a href="#"><i class="bi bi-envelope-fill"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-sm-6 fade-up">
-        <div class="team-card">
-          <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&q=80" alt="CFO" class="team-img" />
-          <div class="team-body">
-            <div class="team-name">Michael Torres</div>
-            <div class="team-role">Chief Financial Officer</div>
-            <div class="team-social">
-              <a href="#"><i class="bi bi-twitter-x"></i></a>
-              <a href="#"><i class="bi bi-linkedin"></i></a>
-              <a href="#"><i class="bi bi-envelope-fill"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-sm-6 fade-up">
-        <div class="team-card">
-          <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&q=80" alt="Outreach" class="team-img" />
-          <div class="team-body">
-            <div class="team-name">Priya Sharma</div>
-            <div class="team-role">Community Outreach Lead</div>
-            <div class="team-social">
-              <a href="#"><i class="bi bi-twitter-x"></i></a>
-              <a href="#"><i class="bi bi-linkedin"></i></a>
-              <a href="#"><i class="bi bi-envelope-fill"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ========================
-     BLOG PREVIEW
-======================== -->
-<section class="section-pad">
-  <div class="container">
-    <div class="row justify-content-between align-items-end mb-5">
-      <div class="col-lg-6 fade-up">
-        <div class="section-label">Blog & News</div>
-        <h2 class="section-title">Stories of Hope & Change</h2>
-      </div>
-      <div class="col-lg-4 text-lg-end fade-up">
-        <a href="pages/blog.html" class="btn-outline-custom">All Posts <i class="bi bi-arrow-right"></i></a>
-      </div>
-    </div>
-    <div class="row gy-4">
-      <div class="col-lg-4 col-md-6 fade-up">
-        <div class="blog-card">
-          <img src="https://images.unsplash.com/photo-1527613426441-4da17471b66d?w=500&q=80" alt="Blog 1" class="blog-img" />
-          <div class="blog-body">
-            <div class="blog-category">Clean Water</div>
-            <h4 class="blog-title"><a href="pages/blog-detail.html">How One Well Transformed a Kenyan Village's Future</a></h4>
-            <p class="blog-excerpt">When the first water pump was turned on in Kibera Village, nobody expected to see grown men cry with joy…</p>
-            <div class="blog-footer">
-              <div class="blog-author">
-                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=60&q=80" alt="Author" class="blog-author-img" />
-                <div>
-                  <div class="blog-author-name">Sarah M.</div>
-                  <div class="blog-date">Jun 12, 2026</div>
-                </div>
-              </div>
-              <a href="pages/blog-detail.html" class="read-more">Read →</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6 fade-up">
-        <div class="blog-card">
-          <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=500&q=80" alt="Blog 2" class="blog-img" />
-          <div class="blog-body">
-            <div class="blog-category">Education</div>
-            <h4 class="blog-title"><a href="pages/blog-detail.html">250 Scholarships Awarded in Our Biggest Year Yet</a></h4>
-            <p class="blog-excerpt">This spring, HopeWave partnered with 14 universities to provide full scholarships to underprivileged youth…</p>
-            <div class="blog-footer">
-              <div class="blog-author">
-                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=60&q=80" alt="Author" class="blog-author-img" />
-                <div>
-                  <div class="blog-author-name">David C.</div>
-                  <div class="blog-date">May 28, 2026</div>
-                </div>
-              </div>
-              <a href="pages/blog-detail.html" class="read-more">Read →</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6 fade-up">
-        <div class="blog-card">
-          <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=500&q=80" alt="Blog 3" class="blog-img" />
-          <div class="blog-body">
-            <div class="blog-category">Healthcare</div>
-            <h4 class="blog-title"><a href="pages/blog-detail.html">Our Mobile Clinics Reached 5,000 Patients This Quarter</a></h4>
-            <p class="blog-excerpt">The numbers are in — and they tell a story of lives saved, diseases prevented, and hope restored…</p>
-            <div class="blog-footer">
-              <div class="blog-author">
-                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=60&q=80" alt="Author" class="blog-author-img" />
-                <div>
-                  <div class="blog-author-name">Emma R.</div>
-                  <div class="blog-date">May 10, 2026</div>
-                </div>
-              </div>
-              <a href="pages/blog-detail.html" class="read-more">Read →</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ========================
-     PARTNERS / SPONSORS
-======================== -->
-<section class="section-pad-sm" style="border-top:1px solid var(--border-color);">
-  <div class="container">
-    <div class="text-center mb-4">
-      <p style="font-size:13px; letter-spacing:2px; text-transform:uppercase; color:var(--text-muted); font-weight:700;">Trusted by Our Partners</p>
-    </div>
-    <div class="row align-items-center justify-content-center gy-3">
-      <div class="col-6 col-md-2 partner-wrap"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/272px-Google_2015_logo.svg.png" alt="Google" class="partner-logo" /></div>
-      <div class="col-6 col-md-2 partner-wrap"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/320px-Amazon_logo.svg.png" alt="Amazon" class="partner-logo" /></div>
-      <div class="col-6 col-md-2 partner-wrap"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/320px-Netflix_2015_logo.svg.png" alt="Netflix" class="partner-logo" /></div>
-      <div class="col-6 col-md-2 partner-wrap"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/60px-LinkedIn_logo_initials.png" alt="LinkedIn" class="partner-logo" style="height:40px;" /></div>
-      <div class="col-6 col-md-2 partner-wrap"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Spotify_logo_without_text.svg/80px-Spotify_logo_without_text.svg.png" alt="Spotify" class="partner-logo" style="height:44px;" /></div>
-    </div>
-  </div>
-</section>
-
-<!-- ========================
-     NEWSLETTER CTA
-======================== -->
-<section class="section-pad cta-section">
-  <div class="container position-relative" style="z-index:2;">
-    <div class="text-center">
-      <div class="section-label" style="justify-content:center; color:rgba(255,255,255,0.8);">
-        <span style="background:rgba(255,255,255,0.5);"></span>Stay Connected
-      </div>
-      <h2 class="section-title" style="color:#fff; font-size:clamp(1.8rem,3.5vw,2.8rem);">Join Our Community of Changemakers</h2>
-      <p class="section-desc mx-auto mb-4" style="color:rgba(255,255,255,0.8);">Get updates on our campaigns, impact stories, and ways to get involved. No spam — just hope.</p>
-      <form class="newsletter-form newsletter-form-el d-flex justify-content-center gap-3 flex-wrap">
-        <input type="email" class="newsletter-input" placeholder="Enter your email address" required />
-        <button type="submit" class="newsletter-btn">Subscribe <i class="bi bi-arrow-right ms-1"></i></button>
-      </form>
-      <p style="color:rgba(255,255,255,0.5); font-size:13px; margin-top:16px;"><i class="bi bi-shield-check me-1"></i>No spam. Unsubscribe anytime.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ========================
-     FOOTER
-======================== -->
-<footer class="footer-main">
-  <div class="container">
-    <div class="row gy-5">
-      <div class="col-lg-4">
-        <div class="footer-brand">
-          <div class="footer-brand-name">Hope<span>Wave</span></div>
-        </div>
-        <p class="footer-desc">Empowering communities through compassionate action. Every donation creates ripples of hope that last generations.</p>
-        <div class="footer-social">
-          <a href="#"><i class="bi bi-facebook"></i></a>
-          <a href="#"><i class="bi bi-twitter-x"></i></a>
-          <a href="#"><i class="bi bi-instagram"></i></a>
-          <a href="#"><i class="bi bi-linkedin"></i></a>
-          <a href="#"><i class="bi bi-youtube"></i></a>
-        </div>
-      </div>
-
-      <div class="col-lg-2 col-sm-4">
-        <div class="footer-heading">Quick Links</div>
-        <ul class="footer-links">
-          <li><a href="pages/about.html"><i class="bi bi-chevron-right"></i>About Us</a></li>
-          <li><a href="pages/causes.html"><i class="bi bi-chevron-right"></i>Our Causes</a></li>
-          <li><a href="pages/events.html"><i class="bi bi-chevron-right"></i>Events</a></li>
-          <li><a href="pages/volunteer.html"><i class="bi bi-chevron-right"></i>Volunteer</a></li>
-          <li><a href="pages/blog.html"><i class="bi bi-chevron-right"></i>Blog</a></li>
-          <li><a href="pages/contact.html"><i class="bi bi-chevron-right"></i>Contact</a></li>
-        </ul>
-      </div>
-
-      <div class="col-lg-2 col-sm-4">
-        <div class="footer-heading">Causes</div>
-        <ul class="footer-links">
-          <li><a href="#"><i class="bi bi-chevron-right"></i>Clean Water</a></li>
-          <li><a href="#"><i class="bi bi-chevron-right"></i>Education</a></li>
-          <li><a href="#"><i class="bi bi-chevron-right"></i>Healthcare</a></li>
-          <li><a href="#"><i class="bi bi-chevron-right"></i>Food Security</a></li>
-          <li><a href="#"><i class="bi bi-chevron-right"></i>Disaster Relief</a></li>
-          <li><a href="#"><i class="bi bi-chevron-right"></i>Environment</a></li>
-        </ul>
-      </div>
-
-      <div class="col-lg-4 col-sm-4">
-        <div class="footer-heading">Contact Us</div>
-        <div class="footer-contact-item">
-          <i class="bi bi-geo-alt-fill footer-contact-icon"></i>
-          <div>142 Hope Avenue, Suite 300<br/>New York, NY 10001, USA</div>
-        </div>
-        <div class="footer-contact-item">
-          <i class="bi bi-telephone-fill footer-contact-icon"></i>
-          <div>+1 (800) 467-3968</div>
-        </div>
-        <div class="footer-contact-item">
-          <i class="bi bi-envelope-fill footer-contact-icon"></i>
-          <div>hello@hopewave.org</div>
-        </div>
-        <div style="margin-top:20px;">
-          <a href="pages/donate.html" class="btn-primary-custom" style="font-size:14px; padding:12px 28px;">
-            <i class="bi bi-heart-fill"></i> Donate Now
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <hr class="footer-divider" />
-  </div>
-  <div class="footer-bottom">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-md-6 text-center text-md-start">
-          © 2026 HopeWave. All rights reserved. Designed with <i class="bi bi-heart-fill text-danger"></i> for a better world.
-        </div>
-        <div class="col-md-6 text-center text-md-end mt-2 mt-md-0">
-          <a href="#">Privacy Policy</a> &nbsp;·&nbsp;
-          <a href="#">Terms of Use</a> &nbsp;·&nbsp;
-          <a href="#">Cookie Policy</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</footer>
-
-<!-- Scroll To Top -->
-<div class="scroll-top"><i class="bi bi-arrow-up"></i></div>
-
-<!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<!-- Custom JS -->
+<div id="footer-inject"></div>
+<script src="js/components.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>
